@@ -1,127 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OSAC - Estrellitas del Saber</title>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { 
-      font-family: 'Arial', sans-serif; 
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OSAC - Estrellitas del Saber</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* PANTALLA DE BIENVENIDA */
+#bienvenida{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.logo-texto{
+    font-size:90px;
+    font-weight:bold;
+    color:#4CAF50;
+    animation:brillo 2s infinite;
+    margin-bottom:20px;
+}
+
+@keyframes brillo{
+    0%,100%{
+        text-shadow:0 0 10px #fff,0 0 20px #4CAF50;
     }
-    
-    /* PANTALLA BIENVENIDA */
-    #bienvenida { 
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column; 
-      justify-content: center;
-      align-items: center;
-      text-align: center; 
-      padding: 40px 20px; 
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: white;
+    50%{
+        text-shadow:0 0 30px #fff,0 0 40px #4CAF50;
     }
-    .logo-texto {
-      font-size: 90px;
-      font-weight: bold;
-      color: #4CAF50;
-      animation: brillo 2s infinite;
-      margin-bottom: 20px;
-    }
-    @keyframes brillo {
-      0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #4CAF50; }
-      50% { text-shadow: 0 0 30px #fff, 0 0 40px #4CAF50; }
-    }
-    #bienvenida h1 { font-size: 28px; margin: 10px 0; }
-    #bienvenida h2 { font-size: 22px; color: #4CAF50; margin: 5px 0 30px; }
-    .btn { 
-      display: inline-block; 
-      padding: 18px 45px; 
-      background: linear-gradient(90deg, #4CAF50, #45a049);
-      color: white; 
-      text-decoration: none; 
-      border-radius: 15px; 
-      font-size: 20px; 
-      font-weight: bold;
-      margin-top: 40px;
-      border: none;
-      cursor: pointer;
-    }
-    
-    /* CONTENIDO OCULTO */
-    #contenido { 
-      display: none;
-      background: #f5f5f5;
-    }
-    header { 
-      background: #003366; 
-      color: #FFD700; 
-      text-align: center; 
-      padding: 80px 20px; 
-    }
-    section { 
-      padding: 60px 25px; 
-      max-width: 800px; 
-      margin: 30px auto; 
-      background: white; 
-      border-radius: 12px; 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 { 
-      color: #003366; 
-      border-bottom: 3px solid #FFD700; 
-      padding-bottom: 10px; 
-    }
-    h3 { 
-      color: #003366; 
-      margin-top: 30px; 
-    }
-  </style>
+}
+
+#bienvenida h1{
+    font-size:28px;
+    margin:10px 0;
+}
+
+#bienvenida h2{
+    font-size:22px;
+    color:#4CAF50;
+    margin:5px 0 30px;
+}
+
+.btn-bienvenida{
+    display:inline-block;
+    padding:18px 45px;
+    background:linear-gradient(90deg,#4CAF50,#45a049);
+    color:white;
+    text-decoration:none;
+    border-radius:15px;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:40px;
+}
+
+/* PÁGINA PRINCIPAL */
+#principal{
+    display:none;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    min-height:100vh;
+}
+
+header{
+    background:#003366;
+    color:#FFD700;
+    text-align:center;
+    padding:80px 20px;
+}
+
+section{
+    padding:60px 25px;
+    max-width:800px;
+    margin:30px auto;
+    background:white;
+    border-radius:12px;
+}
+
+section h2{
+    color:#003366;
+    border-bottom:3px solid #FFD700;
+    padding-bottom:10px;
+}
+
+section h3{
+    color:#003366;
+    margin-top:30px;
+}
+
+section p{
+    margin-top:15px;
+    line-height:1.6;
+}
+
+a{
+    color:#003366;
+}
+</style>
 </head>
 <body>
 
-  <!-- PANTALLA 1: BIENVENIDA -->
-  <div id="bienvenida">
+<!-- BIENVENIDA -->
+<div id="bienvenida">
+
     <div class="logo-texto">OSAC</div>
+
     <h1>Bienvenidos a</h1>
     <h1>Estrellitas del Saber</h1>
     <h2>Servicio de Cuentas</h2>
-    <p>La forma más fácil y rápida de calcular</p>
-    <button onclick="mostrarTodo()" class="btn">Comenzar ✨</button>
-  </div>
 
-  <!-- PANTALLA 2: TODO EL CONTENIDO -->
-  <div id="contenido">
+    <p>La forma más fácil y rápida de calcular</p>
+
+    <a href="#" class="btn-bienvenida" onclick="mostrarPagina()">
+        Comenzar ✨
+    </a>
+
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div id="principal">
+
     <header>
-      <h1>Bienvenidos a OSAC</h1>
-      <p>Outsourcing Servicios y Asesorías Contables</p>
+        <h1>Bienvenidos a OSAC</h1>
+        <p>Outsourcing Servicios y Asesorías Contables</p>
     </header>
 
     <section id="nosotros">
-      <h2>Nosotros</h2>
-      <h3>Misión</h3>
-      <p>Ayudar a comerciantes y vendedores del Mercado Unión Dignidad a mantenerse al día con su contabilidad y obligaciones tributarias, brindándoles un servicio confiable, accesible y con compromiso.</p>
-      <h3>Visión</h3>
-      <p>Ser el grupo de apoyo de confianza en Puno para comerciantes y vendedores, brindando un servicio ordenado, confiable y accesible que contribuya al crecimiento de sus negocios.</p>
-      <p><b>PROMETEMOS SEGUIR MEJORANDO</b> ✨</p>
+        <h2>Nosotros</h2>
+
+        <h3>Misión</h3>
+        <p>
+            Ayudar a comerciantes y vendedores del Mercado Unión Dignidad
+            a mantenerse al día con su contabilidad y obligaciones tributarias,
+            brindándoles un servicio confiable, accesible y con compromiso.
+        </p>
+
+        <h3>Visión</h3>
+        <p>
+            Ser el grupo de apoyo de confianza en Puno para comerciantes
+            y vendedores, brindando un servicio ordenado, confiable y accesible
+            que contribuya al crecimiento de sus negocios.
+        </p>
+
+        <p><b>PROMETEMOS SEGUIR MEJORANDO ✨</b></p>
     </section>
 
     <section id="contacto">
-      <h2>Contacto</h2>
-      <p>📱 WhatsApp: <a href="https://wa.me/51905571181">905 571 181</a></p>
-      <p>✉️ Correo: m</p>
-      <p>🏢 I.E. Comercial</p>
+        <h2>Contacto</h2>
+
+        <p>📱 WhatsApp:
+            <a href="https://wa.me/51905571181">
+                905 571 181
+            </a>
+        </p>
+
+        <p>✉️ Correo: m</p>
+
+        <p>🏢 I.E. Comercial</p>
     </section>
-  </div>
+
+</div>
 
 <script>
-function mostrarTodo() {
-  document.getElementById('bienvenida').style.display = 'none';
-  document.getElementById('contenido').style.display = 'block';
-  window.scrollTo(0, 0);
+function mostrarPagina() {
+    document.getElementById("bienvenida").style.display = "none";
+    document.getElementById("principal").style.display = "block";
 }
 </script>
 
