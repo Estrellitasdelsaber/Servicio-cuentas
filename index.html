@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAC - Estrellitas del Saber</title>
+<title>OSAC PRO</title>
 
 <style>
 body{
@@ -17,6 +17,7 @@ min-height:100vh;
 padding:30px;
 }
 
+/* BIENVENIDA */
 #bienvenida{
 display:flex;
 flex-direction:column;
@@ -57,48 +58,43 @@ box-shadow:0 2px 10px rgba(0,0,0,.15);
 
 h2{color:#003366;}
 
-input{
-padding:10px;
-margin:5px;
-font-size:16px;
-width:100%;
-box-sizing:border-box;
-}
-
-/* CALCULADORA */
+/* ================= CALCULADORA GRANDE ================= */
 .calc{
 background:#222;
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:20px;
 color:white;
+max-width:450px;
+margin:auto;
 }
 
 #d{
 width:100%;
-height:60px;
-font-size:30px;
+height:80px;
+font-size:40px;
 text-align:right;
 background:#333;
 color:white;
 border:none;
-border-radius:10px;
-padding:10px;
-margin-bottom:10px;
+border-radius:12px;
+padding:15px;
+margin-bottom:15px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:8px;
+gap:10px;
 }
 
 .grid button{
-height:60px;
-font-size:20px;
+height:80px;
+font-size:26px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:#444;
 color:white;
+cursor:pointer;
 }
 
 .grid button:active{background:#666}
@@ -108,31 +104,32 @@ color:white;
 .c{background:red}
 .z{grid-column:span 2}
 
-/* ASISTENTE */
+/* ================= ASISTENTE ================= */
 .asistente{
 text-align:center;
 background:linear-gradient(135deg,#667eea,#764ba2);
 color:white;
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:20px;
 }
 
 #btnMic{
 background:white;
 border:none;
-padding:40px;
+padding:50px;
 border-radius:50%;
-font-size:50px;
+font-size:60px;
 cursor:pointer;
 margin-top:20px;
 }
 
 #salida{
 margin-top:20px;
-font-size:20px;
-background:rgba(255,255,255,0.2);
+font-size:22px;
+background:rgba(255,255,255,0.25);
 padding:15px;
-border-radius:10px;
+border-radius:12px;
+min-height:70px;
 }
 
 </style>
@@ -143,8 +140,7 @@ border-radius:10px;
 <!-- BIENVENIDA -->
 <div id="bienvenida" class="pantalla" style="display:flex;">
 <div class="logo">OSAC</div>
-<h1>Bienvenidos</h1>
-<h2>Estrellitas del Saber</h2>
+<h1>Estrellitas del Saber</h1>
 <button class="btn" onclick="mostrar('menu')">Comenzar ✨</button>
 </div>
 
@@ -153,10 +149,10 @@ border-radius:10px;
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('bienvenida')">⬅️ Volver</button>
 
-<h2>Herramientas OSAC</h2>
+<h2>Herramientas PRO</h2>
 
-<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente de Voz</button>
+<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora PRO</button>
+<button class="btn" onclick="mostrar('asistente')">🎤 Asistente IA</button>
 
 </div>
 </div>
@@ -166,7 +162,7 @@ border-radius:10px;
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('menu')">⬅️ Volver</button>
 
-<h2>Calculadora OSAC</h2>
+<h2>Calculadora PRO</h2>
 
 <div class="calc">
 <input id="d" readonly>
@@ -207,8 +203,8 @@ border-radius:10px;
 <button class="btn back" onclick="mostrar('menu')">⬅️ Volver</button>
 
 <div class="asistente">
-<h2>Asistente de Voz 🎤</h2>
-<p>Di: "15 más 8", "20 entre 4", etc</p>
+<h2>Asistente IA 🎤</h2>
+<p>Di: “hola”, “15 más 8”, “quién eres”</p>
 
 <button id="btnMic">🎤</button>
 
@@ -224,21 +220,27 @@ document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
 document.getElementById(id).style.display='block';
 }
 
-/* ===== ASISTENTE ===== */
+/* ================= VOZ ================= */
 const btn = document.getElementById('btnMic');
 const salida = document.getElementById('salida');
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+/* VOZ MÁS FUERTE Y NATURAL */
 function hablar(texto){
 speechSynthesis.cancel();
+
 const voz = new SpeechSynthesisUtterance(texto);
 voz.lang='es-ES';
-voz.rate=0.9;
+voz.rate=0.95;
+voz.pitch=1;
+voz.volume=1; // 🔊 MÁS FUERTE
+
 speechSynthesis.speak(voz);
 }
 
 if(SpeechRecognition){
+
 const recognition = new SpeechRecognition();
 recognition.lang='es-ES';
 
@@ -247,45 +249,70 @@ salida.textContent='Escuchando...';
 recognition.start();
 };
 
+/* ===== INTELIGENCIA BÁSICA ===== */
 recognition.onresult=(e)=>{
 let texto=e.results[0][0].transcript.toLowerCase();
+
 let nums=texto.match(/\d+/g);
 
+/* ===== SALUDOS Y CONVERSACIÓN ===== */
+if(texto.includes("hola")){
+let msg="Hola 👋, soy tu asistente OSAC. Estoy listo para ayudarte con cálculos.";
+salida.textContent=msg;
+hablar(msg);
+return;
+}
+
+if(texto.includes("quién eres")){
+let msg="Soy OSAC, un asistente creado para ayudarte a calcular y aprender.";
+salida.textContent=msg;
+hablar(msg);
+return;
+}
+
+if(texto.includes("ayuda")){
+let msg="Puedes decir: suma, resta, por o entre, o decir dos números.";
+salida.textContent=msg;
+hablar(msg);
+return;
+}
+
+/* ===== OPERACIONES ===== */
 if(nums && nums.length>=2){
+
 let n1=parseFloat(nums[0]);
 let n2=parseFloat(nums[1]);
-let res=0;
-let msg='';
+let msg="";
 
 if(texto.includes('más')||texto.includes('suma')){
-res=n1+n2;
-msg=`${n1} más ${n2} es ${res}`;
+msg=`${n1} más ${n2} es ${n1+n2}`;
 }
 else if(texto.includes('menos')){
-res=n1-n2;
-msg=`${n1} menos ${n2} es ${res}`;
+msg=`${n1} menos ${n2} es ${n1-n2}`;
 }
 else if(texto.includes('por')){
-res=n1*n2;
-msg=`${n1} por ${n2} es ${res}`;
+msg=`${n1} por ${n2} es ${n1*n2}`;
 }
 else if(texto.includes('entre')){
-if(n2==0) msg='No se puede dividir entre cero';
+if(n2==0) msg="No se puede dividir entre cero";
 else msg=`${n1} entre ${n2} es ${n1/n2}`;
 }
-else msg='Di más, menos, por o entre';
+else{
+msg="Di: más, menos, por o entre";
+}
 
 salida.textContent=msg;
 hablar(msg);
 
 }else{
-let msg='No entendí los números';
+let msg="No entendí. Intenta decir dos números.";
 salida.textContent=msg;
 hablar(msg);
 }
 };
+
 }else{
-salida.textContent='Tu navegador no soporta micrófono';
+salida.textContent="Tu navegador no soporta voz";
 }
 
 </script>
