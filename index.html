@@ -36,19 +36,17 @@ color:#4CAF50;
 }
 
 .btn{
-padding:15px 25px;
-font-size:18px;
+padding:12px 20px;
+font-size:16px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 background:#4CAF50;
 color:white;
 cursor:pointer;
-margin-top:10px;
+margin:5px;
 }
 
-.btn:hover{
-background:#3e8e41;
-}
+.btn:hover{background:#3e8e41;}
 
 .tarjeta{
 max-width:900px;
@@ -62,10 +60,18 @@ box-shadow:0 2px 10px rgba(0,0,0,.15);
 h2{color:#003366;}
 
 input{
-padding:10px;
+padding:12px;
 margin:5px;
-width:90%;
+width:95%;
 font-size:16px;
+}
+
+.calc{
+font-size:24px;
+padding:15px;
+width:100%;
+text-align:right;
+margin-bottom:10px;
 }
 </style>
 </head>
@@ -77,7 +83,6 @@ font-size:16px;
 <div class="logo">OSAC</div>
 <h1>Estrellitas del Saber</h1>
 <p>Servicio de cuentas para vendedores</p>
-
 <button class="btn" onclick="mostrar('nosotros')">Comenzar ✨</button>
 </div>
 
@@ -86,21 +91,18 @@ font-size:16px;
 <div class="tarjeta">
 <h2>Nosotros</h2>
 
-<p>
-Somos un grupo que ayuda a comerciantes del Mercado Unión Dignidad
-a mejorar el control de sus ventas y evitar pérdidas en el día a día.
-</p>
+<p>Somos OSAC, un grupo dedicado a ayudar a comerciantes del Mercado Unión Dignidad a mejorar el control de sus ventas diarias y evitar pérdidas económicas.</p>
 
-<p>
-Buscamos ser apoyo confiable para vendedores, promoviendo la organización
-y el buen manejo del dinero en pequeños negocios.
-</p>
+<h3>Misión</h3>
+<p>Brindar apoyo a los pequeños vendedores mediante herramientas simples que faciliten el cálculo de ventas, mejoren la organización y promuevan una buena gestión del dinero.</p>
 
-<p><b>📍 Puno - Perú</b></p>
-<p>📱 WhatsApp: 905 571 181</p>
-<p>✉️ Correo: nmgomezmamani@comercial45.edu.pe</p>
+<h3>Visión</h3>
+<p>Ser un sistema reconocido que contribuya al desarrollo de los comerciantes, ayudando a que sus negocios crezcan con orden, confianza y eficiencia.</p>
+
+<p><b>📍 IES. COMERCIAL 45 "ERP" - PUNO - PERÚ</b></p>
 
 <button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
+<button class="btn" onclick="mostrar('bienvenida')">⬅ Atrás</button>
 </div>
 </div>
 
@@ -108,17 +110,34 @@ y el buen manejo del dinero en pequeños negocios.
 <div id="consejos" class="pantalla">
 <div class="tarjeta">
 
-<h2>Cómo facilitar las cuentas diarias</h2>
+<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
 
 <h3>Consejos</h3>
-<p>📒 Anota cada venta en una libreta.</p>
-<p>🏷️ Mantén precios visibles.</p>
-<p>🧮 Usa calculadora para evitar errores.</p>
-<p>💰 Separa el dinero por tipos de billetes.</p>
-<p>✅ Revisa todo al final del día.</p>
+<p>Ten una libreta para anotar cada venta.</p>
+<p>Mantén los productos ordenados y con precios visibles.</p>
+<p>Usa una calculadora para evitar errores.</p>
+<p>Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
+<p>Revisa las cuentas al terminar el día.</p>
 
-<h3>Ejemplo</h3>
-<p>5 productos × S/2 = S/10</p>
+<h3>Pasos para calcular las ventas</h3>
+
+<p><b>1. Anota lo que vendes</b><br>
+Registra cantidad y precio.</p>
+
+<p><b>2. Multiplica</b><br>
+Ejemplo: 5 kilos de papa × S/2 = S/10</p>
+
+<p><b>3. Suma todas las ventas</b><br>
+Junta todo el dinero obtenido.</p>
+
+<p><b>4. Resta los gastos</b><br>
+Transporte, bolsas o mercadería.</p>
+
+<p><b>5. Conoce tu ganancia</b><br>
+Lo que queda es tu ganancia final.</p>
+
+<p><b>Mensaje final:</b><br>
+Llevar cuentas claras ayuda a ahorrar tiempo, evitar errores y conocer cuánto dinero se gana cada día.</p>
 
 <button class="btn" onclick="mostrar('herramientas')">Continuar ➜</button>
 <button class="btn" onclick="mostrar('nosotros')">⬅ Atrás</button>
@@ -132,27 +151,71 @@ y el buen manejo del dinero en pequeños negocios.
 
 <h2>Herramientas OSAC</h2>
 
-<h3>🧮 Calculadora</h3>
-
-<input id="n1" type="number" placeholder="Número 1">
-<input id="n2" type="number" placeholder="Número 2">
-
-<button class="btn" onclick="sumar()">Sumar</button>
-
-<p id="resultado"></p>
-
-<hr>
-
-<h3>🎤 Asistente de Voz</h3>
-<p>Escribe algo para escucharlo:</p>
-
-<input id="textoVoz" placeholder="Escribe aquí...">
-<button class="btn" onclick="hablar()">Escuchar</button>
+<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
+<button class="btn" onclick="mostrar('asistente')">🎤 Asistente</button>
 
 <br><br>
 
-<button class="btn" onclick="mostrar('gracias')">Finalizar ➜</button>
 <button class="btn" onclick="mostrar('consejos')">⬅ Atrás</button>
+</div>
+</div>
+
+<!-- CALCULADORA -->
+<div id="calculadora" class="pantalla">
+<div class="tarjeta">
+
+<h2>Calculadora</h2>
+
+<input id="calc" class="calc" placeholder="0">
+
+<div>
+<button class="btn" onclick="agregar('7')">7</button>
+<button class="btn" onclick="agregar('8')">8</button>
+<button class="btn" onclick="agregar('9')">9</button>
+<button class="btn" onclick="agregar('/')">÷</button>
+</div>
+
+<div>
+<button class="btn" onclick="agregar('4')">4</button>
+<button class="btn" onclick="agregar('5')">5</button>
+<button class="btn" onclick="agregar('6')">6</button>
+<button class="btn" onclick="agregar('*')">×</button>
+</div>
+
+<div>
+<button class="btn" onclick="agregar('1')">1</button>
+<button class="btn" onclick="agregar('2')">2</button>
+<button class="btn" onclick="agregar('3')">3</button>
+<button class="btn" onclick="agregar('-')">-</button>
+</div>
+
+<div>
+<button class="btn" onclick="agregar('0')">0</button>
+<button class="btn" onclick="limpiar()">C</button>
+<button class="btn" onclick="calcular()">=</button>
+<button class="btn" onclick="agregar('+')">+</button>
+</div>
+
+<button class="btn" onclick="mostrar('herramientas')">⬅ Volver</button>
+
+</div>
+</div>
+
+<!-- ASISTENTE -->
+<div id="asistente" class="pantalla">
+<div class="tarjeta">
+
+<h2>Asistente de Voz</h2>
+
+<p>Habla o escribe operaciones como: 1+1, 5*8, 383-20</p>
+
+<input id="voz" placeholder="Escribe o habla aquí...">
+
+<button class="btn" onclick="hablar()">🎤 Escuchar y Resolver</button>
+
+<p id="resp"></p>
+
+<button class="btn" onclick="mostrar('herramientas')">⬅ Volver</button>
 
 </div>
 </div>
@@ -177,27 +240,45 @@ y el buen manejo del dinero en pequeños negocios.
 <script>
 
 function mostrar(id){
-document.querySelectorAll('.pantalla').forEach(p => {
-p.style.display = 'none';
+document.querySelectorAll('.pantalla').forEach(p=>{
+p.style.display='none';
 });
-
 document.getElementById(id).style.display =
-(id === "bienvenida") ? "flex" : "block";
+(id==='bienvenida')?'flex':'block';
 }
 
-// CALCULADORA
-function sumar(){
-let a = parseFloat(document.getElementById("n1").value) || 0;
-let b = parseFloat(document.getElementById("n2").value) || 0;
-document.getElementById("resultado").innerText =
-"Resultado: S/ " + (a + b);
+/* CALCULADORA */
+function agregar(v){
+document.getElementById("calc").value += v;
 }
 
-// VOZ
+function limpiar(){
+document.getElementById("calc").value = "";
+}
+
+function calcular(){
+try{
+let r = eval(document.getElementById("calc").value);
+document.getElementById("calc").value = r;
+}catch{
+document.getElementById("calc").value = "Error";
+}
+}
+
+/* ASISTENTE */
 function hablar(){
-let texto = document.getElementById("textoVoz").value;
-let voz = new SpeechSynthesisUtterance(texto);
+let texto = document.getElementById("voz").value;
+
+try{
+let resultado = eval(texto.replace(/×/g,'*').replace(/÷/g,'/'));
+document.getElementById("resp").innerText = "Resultado: " + resultado;
+
+let voz = new SpeechSynthesisUtterance("El resultado es " + resultado);
 speechSynthesis.speak(voz);
+
+}catch{
+document.getElementById("resp").innerText = "No entendí la operación";
+}
 }
 
 </script>
