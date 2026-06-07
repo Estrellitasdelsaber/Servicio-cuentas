@@ -1,217 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAC - Estrellitas del Saber</title>
-
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f4f4f4;
-}
-
-.pantalla{
-display:none;
-min-height:100vh;
-padding:30px;
-}
-
-#bienvenida{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
-color:white;
-}
-
-.logo{
-font-size:80px;
-font-weight:bold;
-color:#4CAF50;
-}
-
-.btn{
-padding:12px 20px;
-font-size:16px;
-border:none;
-border-radius:10px;
-background:#4CAF50;
-color:white;
-cursor:pointer;
-margin:5px;
-}
-
-.btn:hover{background:#3e8e41;}
-
-.tarjeta{
-max-width:900px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
-}
-
-h2{color:#003366;}
-
-input{
-padding:12px;
-margin:5px;
-width:95%;
-font-size:16px;
-}
-
-.calc{
-font-size:24px;
-padding:15px;
-width:100%;
-text-align:right;
-margin-bottom:10px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- BIENVENIDA -->
-<div id="bienvenida" class="pantalla" style="display:flex;">
-<div class="logo">OSAC</div>
-<h1>Estrellitas del Saber</h1>
-<p>Servicio de cuentas para vendedores</p>
-<button class="btn" onclick="mostrar('nosotros')">Comenzar ✨</button>
-</div>
-
-<!-- NOSOTROS -->
-<div id="nosotros" class="pantalla">
-<div class="tarjeta">
-<h2>Nosotros</h2>
-
-<p>Somos OSAC, un grupo dedicado a ayudar a comerciantes del Mercado Unión Dignidad a mejorar el control de sus ventas diarias y evitar pérdidas económicas.</p>
-
-<h3>Misión</h3>
-<p>Brindar apoyo a los pequeños vendedores mediante herramientas simples que faciliten el cálculo de ventas, mejoren la organización y promuevan una buena gestión del dinero.</p>
-
-<h3>Visión</h3>
-<p>Ser un sistema reconocido que contribuya al desarrollo de los comerciantes, ayudando a que sus negocios crezcan con orden, confianza y eficiencia.</p>
-
-<p><b>📍 IES. COMERCIAL 45 "ERP" - PUNO - PERÚ</b></p>
-
-<button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
-<button class="btn" onclick="mostrar('bienvenida')">⬅ Atrás</button>
-</div>
-</div>
-
-<!-- CONSEJOS -->
-<div id="consejos" class="pantalla">
-<div class="tarjeta">
-
-<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
-
-<h3>Consejos</h3>
-<p>Ten una libreta para anotar cada venta.</p>
-<p>Mantén los productos ordenados y con precios visibles.</p>
-<p>Usa una calculadora para evitar errores.</p>
-<p>Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
-<p>Revisa las cuentas al terminar el día.</p>
-
-<h3>Pasos para calcular las ventas</h3>
-
-<p><b>1. Anota lo que vendes</b><br>
-Registra cantidad y precio.</p>
-
-<p><b>2. Multiplica</b><br>
-Ejemplo: 5 kilos de papa × S/2 = S/10</p>
-
-<p><b>3. Suma todas las ventas</b><br>
-Junta todo el dinero obtenido.</p>
-
-<p><b>4. Resta los gastos</b><br>
-Transporte, bolsas o mercadería.</p>
-
-<p><b>5. Conoce tu ganancia</b><br>
-Lo que queda es tu ganancia final.</p>
-
-<p><b>Mensaje final:</b><br>
-Llevar cuentas claras ayuda a ahorrar tiempo, evitar errores y conocer cuánto dinero se gana cada día.</p>
-
-<button class="btn" onclick="mostrar('herramientas')">Continuar ➜</button>
-<button class="btn" onclick="mostrar('nosotros')">⬅ Atrás</button>
-
-</div>
-</div>
-
-<!-- HERRAMIENTAS -->
-<div id="herramientas" class="pantalla">
-<div class="tarjeta">
-
-<h2>Herramientas OSAC</h2>
-
-<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente</button>
-
-<br><br>
-
-<button class="btn" onclick="mostrar('consejos')">⬅ Atrás</button>
-</div>
-</div>
-
-<!-- CALCULADORA -->
-<div id="calculadora" class="pantalla">
-<div class="tarjeta">
-
-<h2>Calculadora</h2>
-
-<input id="calc" class="calc" placeholder="0">
-
-<div>
-<button class="btn" onclick="agregar('7')">7</button>
-<button class="btn" onclick="agregar('8')">8</button>
-<button class="btn" onclick="agregar('9')">9</button>
-<button class="btn" onclick="agregar('/')">÷</button>
-</div>
-
-<div>
-<button class="btn" onclick="agregar('4')">4</button>
-<button class="btn" onclick="agregar('5')">5</button>
-<button class="btn" onclick="agregar('6')">6</button>
-<button class="btn" onclick="agregar('*')">×</button>
-</div>
-
-<div>
-<button class="btn" onclick="agregar('1')">1</button>
-<button class="btn" onclick="agregar('2')">2</button>
-<button class="btn" onclick="agregar('3')">3</button>
-<button class="btn" onclick="agregar('-')">-</button>
-</div>
-
-<div>
-<button class="btn" onclick="agregar('0')">0</button>
-<button class="btn" onclick="limpiar()">C</button>
-<button class="btn" onclick="calcular()">=</button>
-<button class="btn" onclick="agregar('+')">+</button>
-</div>
-
-<button class="btn" onclick="mostrar('herramientas')">⬅ Volver</button>
-
-</div>
-</div>
-
-<!-- ASISTENTE -->
-<div id="asistente" class="pantalla">
-<div class="tarjeta">
-
-<h2>Asistente de Voz</h2>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAC - Estrellitas del Saber</title>
+<title>OSAK - Estrellitas del Saber</title>
 
 <style>
 body{
@@ -225,6 +17,7 @@ min-height:100vh;
 padding:30px;
 }
 
+/* BIENVENIDA */
 #bienvenida{
 display:flex;
 flex-direction:column;
@@ -243,16 +36,13 @@ color:#4CAF50;
 
 .btn{
 padding:15px 30px;
-font-size:18px;
+font-size:20px;
 border:none;
 border-radius:12px;
 background:#4CAF50;
 color:white;
 cursor:pointer;
-margin:5px;
 }
-
-.back{background:#333;}
 
 .tarjeta{
 max-width:900px;
@@ -263,84 +53,8 @@ border-radius:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-h2{color:#003366;}
-
-input{
-padding:10px;
-margin:5px;
-font-size:16px;
-width:100%;
-box-sizing:border-box;
-}
-
-/* CALCULADORA */
-.calc{
-background:#222;
-padding:20px;
-border-radius:15px;
-color:white;
-}
-
-#d{
-width:100%;
-height:60px;
-font-size:30px;
-text-align:right;
-background:#333;
-color:white;
-border:none;
-border-radius:10px;
-padding:10px;
-margin-bottom:10px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-}
-
-.grid button{
-height:60px;
-font-size:20px;
-border:none;
-border-radius:10px;
-background:#444;
-color:white;
-}
-
-.grid button:active{background:#666}
-
-.o{background:orange}
-.e{background:green;grid-column:span 2}
-.c{background:red}
-.z{grid-column:span 2}
-
-/* ASISTENTE */
-.asistente{
-text-align:center;
-background:linear-gradient(135deg,#667eea,#764ba2);
-color:white;
-padding:20px;
-border-radius:15px;
-}
-
-#btnMic{
-background:white;
-border:none;
-padding:40px;
-border-radius:50%;
-font-size:50px;
-cursor:pointer;
-margin-top:20px;
-}
-
-#salida{
-margin-top:20px;
-font-size:20px;
-background:rgba(255,255,255,0.2);
-padding:15px;
-border-radius:10px;
+h2{
+color:#003366;
 }
 
 </style>
@@ -350,322 +64,178 @@ border-radius:10px;
 
 <!-- BIENVENIDA -->
 <div id="bienvenida" class="pantalla" style="display:flex;">
-<div class="logo">OSAC</div>
-<h1>Bienvenidos</h1>
-<h2>Estrellitas del Saber</h2>
-<button class="btn" onclick="mostrar('menu')">Comenzar ✨</button>
+<div class="logo">OSAK</div>
+<h1>Bienvenidos a</h1>
+<h1>Estrellitas del Saber</h1>
+<h2>Servicio de Cuentas</h2>
+<p>La forma más fácil y rápida de calcular</p>
+
+<button class="btn" onclick="mostrar('nosotros')">
+Comenzar ✨
+</button>
 </div>
 
-<!-- MENU -->
-<div id="menu" class="pantalla">
+<!-- NOSOTROS (COMPLETO ORIGINAL RESTAURADO) -->
+<div id="nosotros" class="pantalla">
 <div class="tarjeta">
-<button class="btn back" onclick="mostrar('bienvenida')">⬅️ Volver</button>
 
-<h2>Herramientas OSAC</h2>
+<h2>Nosotros</h2>
+
+<p>
+Ayudar a comerciantes y vendedores del Mercado Unión Dignidad
+a mantenerse al día con su contabilidad.
+</p>
+
+<p>
+Ser el grupo de apoyo de confianza en Puno para comerciantes
+y vendedores.
+</p>
+
+<p>
+<b>PROMETEMOS SEGUIR MEJORANDO ✨</b>
+</p>
+
+<h2>Contacto</h2>
+
+<p>📱 WhatsApp: 905 571 181</p>
+<p>✉️ Correo: nmgomezmamani@comercial45.edu.pe</p>
+<p>🏢 I.E.S. Comercial 45 ERP - Puno</p>
+
+<button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
+
+</div>
+</div>
+
+<!-- CONSEJOS (COMPLETO ORIGINAL RESTAURADO) -->
+<div id="consejos" class="pantalla">
+<div class="tarjeta">
+
+<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
+
+<h3>Consejos</h3>
+<p>📒 Ten una libreta para anotar cada venta.</p>
+<p>🏷️ Mantén los productos ordenados y con precios visibles.</p>
+<p>🧮 Usa una calculadora para evitar errores.</p>
+<p>💰 Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
+<p>✅ Revisa las cuentas al terminar el día.</p>
+
+<h3>Pasos para calcular las ventas</h3>
+
+<p><b>1. Anota lo que vendes</b></p>
+<p>Cada vez que vendas un producto, registra la cantidad y el precio.</p>
+
+<p><b>2. Multiplica</b></p>
+<p>Multiplica la cantidad vendida por el precio del producto.</p>
+
+<p><b>Ejemplo:</b></p>
+<p>5 kilos de papa × S/2 = S/10</p>
+
+<p><b>3. Suma todas las ventas</b></p>
+
+<p><b>4. Resta los gastos</b></p>
+<p>Si gastaste dinero en transporte, bolsas o mercadería, réstalo del total de ventas.</p>
+
+<p><b>5. Conoce tu ganancia</b></p>
+<p>El resultado final te mostrará cuánto ganaste ese día.</p>
+
+<p>
+Llevar cuentas claras ayuda a ahorrar tiempo y evitar errores.
+</p>
+
+<button class="btn" onclick="mostrar('herramientas')">Siguiente ➜</button>
+
+</div>
+</div>
+
+<!-- HERRAMIENTAS (BÁSICO) -->
+<div id="herramientas" class="pantalla">
+<div class="tarjeta">
+
+<h2>Herramientas OSAK</h2>
 
 <button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente de Voz</button>
+<button class="btn" onclick="mostrar('asistente')">🎤 Asistente</button>
+
+<button class="btn" onclick="mostrar('gracias')">Finalizar ➜</button>
 
 </div>
 </div>
 
-<!-- CALCULADORA -->
+<!-- CALCULADORA (BÁSICA) -->
 <div id="calculadora" class="pantalla">
 <div class="tarjeta">
-<button class="btn back" onclick="mostrar('menu')">⬅️ Volver</button>
 
-<h2>Calculadora OSAC</h2>
+<h2>Calculadora</h2>
 
-<div <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calc</title>
-<style>
-body{margin:0;background:#111;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial}
-.calc{background:#222;padding:20px;border-radius:20px;width:300px}
-#d{width:100%;height:60px;font-size:32px;text-align:right;border:none;background:#333;color:#fff;border-radius:10px;padding:10px;margin-bottom:10px;box-sizing:border-box}
-.b{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-button{height:60px;font-size:22px;border:none;border-radius:10px;background:#444;color:#fff;cursor:pointer}
-button:active{background:#666}
-.o{background:orange}
-.e{background:green;grid-column:span 2}
-.c{background:red}
-.z{grid-column:span 2}
-</style>
-</head>
-<body>
-<div class="calc">
-<input id="d" readonly>
-<div class="b">
-<button class="c" onclick="d.value=''">C</button>
-<button onclick="d.value=d.value.slice(0,-1)">⌫</button>
-<button onclick="d.value+='%'">%</button>
-<button class="o" onclick="d.value+='/'">÷</button>
-<button onclick="d.value+='7'">7</button>
-<button onclick="d.value+='8'">8</button>
-<button onclick="d.value+='9'">9</button>
-<button class="o" onclick="d.value+='*'">×</button>
-<button onclick="d.value+='4'">4</button>
-<button onclick="d.value+='5'">5</button>
-<button onclick="d.value+='6'">6</button>
-<button class="o" onclick="d.value+='-'">-</button>
+<input id="d" style="width:100%;font-size:30px;padding:10px;" readonly>
+
+<br><br>
+
 <button onclick="d.value+='1'">1</button>
 <button onclick="d.value+='2'">2</button>
 <button onclick="d.value+='3'">3</button>
-<button class="o" onclick="d.value+='+'">+</button>
-<button class="z" onclick="d.value+='0'">0</button>
-<button onclick="d.value+='.'">.</button>
-<button class="e" onclick="try{d.value=eval(d.value)}catch{d.value='Error'}">=</button>
+<button onclick="d.value+='+'">+</button><br><br>
+
+<button onclick="d.value+='4'">4</button>
+<button onclick="d.value+='5'">5</button>
+<button onclick="d.value+='6'">6</button>
+<button onclick="d.value+='-'">-</button><br><br>
+
+<button onclick="d.value+='7'">7</button>
+<button onclick="d.value+='8'">8</button>
+<button onclick="d.value+='9'">9</button>
+<button onclick="d.value+='*'">×</button><br><br>
+
+<button onclick="d.value+='0'">0</button>
+<button onclick="d.value=''">C</button>
+<button onclick="d.value=eval(d.value)">=</button>
+<button onclick="d.value+='/'">÷</button>
+
+<br><br>
+<button class="btn" onclick="mostrar('herramientas')">Volver</button>
+
 </div>
 </div>
-</body>
-</html>
 
-<!-- ASISTENTE -->
-<div></div>
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asistente de Voz Pro</title>
-<style>
-body{font-family:Arial;text-align:center;padding-top:80px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;min-height:100vh;margin:0}
-h1{font-size:28px;margin-bottom:10px}
-p{font-size:16px;opacity:0.9}
-#btn{background:white;border:none;padding:50px;border-radius:50%;font-size:60px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.3);transition:0.2s}
-#btn:active{transform:scale(0.95)}
-#salida{margin-top:40px;font-size:26px;font-weight:bold;background:rgba(255,255,255,0.2);padding:20px;border-radius:15px;min-height:60px}
-</style>
-</head>
-<body>
-<h1>Asistente de Voz Pro 🎤</h1>
-<p>Di: "cuánto es 15 más 8" o "20 entre 4"</p>
-<button id="btn">🎤</button>
-<p id="salida">Toca el mic y habla</p>
+<!-- ASISTENTE (BÁSICO) -->
+<div id="asistente" class="pantalla">
+<div class="tarjeta">
 
-<script>
-const btn = document.getElementById('btn');
-const salida = document.getElementById('salida');
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+<h2>Asistente (básico)</h2>
 
-// Función para que hable
-function hablar(texto){
-  speechSynthesis.cancel(); // corta si estaba hablando
-  const voz = new SpeechSynthesisUtterance(texto);
-  voz.lang = 'es-ES';
-  voz.rate = 0.9;
-  voz.pitch = 1;
-  speechSynthesis.speak(voz);
-}
+<p>Función simple activada.</p>
 
-if(!SpeechRecognition){
-  salida.textContent = 'Usa Google Chrome';
-} else {
-  const recognition = new SpeechRecognition();
-  recognition.lang = 'es-ES';
-  recognition.continuous = false;
+<button class="btn" onclick="mostrar('herramientas')">Volver</button>
 
-  btn.onclick = () => {
-    salida.textContent = 'Escuchando...';
-    recognition.start();
-  };
+</div>
+</div>
 
-  recognition.onresult = (e) => {
-    let texto = e.results[0][0].transcript.toLowerCase();
-
-    // Saca todos los números
-    let nums = texto.match(/\d+/g);
-
-    if(nums && nums.length >= 2){
-      let n1 = parseFloat(nums[0]);
-      let n2 = parseFloat(nums[1]);
-      let res = 0;
-      let operacion = '';
-      let respuesta = '';
-
-      // Todas las operaciones en un solo bloque
-      if(texto.includes('más') || texto.includes('suma') || texto.includes('+')){
-        res = n1 + n2;
-        operacion = 'más';
-        respuesta = n1 + ' más ' + n2 + ' es igual a ' + res;
-      }
-      else if(texto.includes('menos') || texto.includes('resta') || texto.includes('-')){
-        res = n1 - n2;
-        operacion = 'menos';
-        respuesta = n1 + ' menos ' + n2 + ' es igual a ' + res;
-      }
-      else if(texto.includes('por') || texto.includes('multiplica') || texto.includes('x')){
-        res = n1 * n2;
-        operacion = 'por';
-        respuesta = n1 + ' por ' + n2 + ' es igual a ' + res;
-      }
-      else if(texto.includes('entre') || texto.includes('divide') || texto.includes('/')){
-        if(n2 === 0){
-          respuesta = 'No se puede dividir entre cero';
-        } else {
-          res = n1 / n2;
-          operacion = 'entre';
-          respuesta = n1 + ' entre ' + n2 + ' es igual a ' + res;
-        }
-      }
-      else {
-        respuesta = 'Di la operación: más, menos, por o entre';
-      }
-
-      salida.textContent = respuesta;
-      hablar(respuesta);
-
-    } else {
-      let msg = 'No entendí los números. Di ejemplo: 9 más 5';
-      salida.textContent = msg;
-      hablar(msg);
-    }
-  };
-
-  recognition.onerror = () => {
-    let msg = 'No te escuché, intenta otra vez';
-    salida.textContent = msg;
-    hablar(msg);
-  };
-}
-</script>
-</body>
-</html>
-  
-
-/* ===== ASISTENTE ===== */
-const btn = document.getElementById('btnMic');
-const salida = document.getElementById('salida');
-
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-function hablar(texto){
-speechSynthesis.cancel();
-const voz = new SpeechSynthesisUtterance(texto);
-voz.lang='es-ES';
-voz.rate=0.9;
-speechSynthesis.speak(voz);
-}
-
-if(SpeechRecognition){
-const recognition = new SpeechRecognition();
-recognition.lang='es-ES';
-
-btn.onclick=()=>{
-salida.textContent='Escuchando...';
-recognition.start();
-};
-
-recognition.onresult=(e)=>{
-let texto=e.results[0][0].transcript.toLowerCase();
-let nums=texto.match(/\d+/g);
-
-if(nums && nums.length>=2){
-let n1=parseFloat(nums[0]);
-let n2=parseFloat(nums[1]);
-let res=0;
-let msg='';
-
-if(texto.includes('más')||texto.includes('suma')){
-res=n1+n2;
-msg=`${n1} más ${n2} es ${res}`;
-}
-else if(texto.includes('menos')){
-res=n1-n2;
-msg=`${n1} menos ${n2} es ${res}`;
-}
-else if(texto.includes('por')){
-res=n1*n2;
-msg=`${n1} por ${n2} es ${res}`;
-}
-else if(texto.includes('entre')){
-if(n2==0) msg='No se puede dividir entre cero';
-else msg=`${n1} entre ${n2} es ${n1/n2}`;
-}
-else msg='Di más, menos, por o entre';
-
-salida.textContent=msg;
-hablar(msg);
-
-}else{
-let msg='No entendí los números';
-salida.textContent=msg;
-hablar(msg);
-}
-};
-}else{
-salida.textContent='Tu navegador no soporta micrófono';
-}
-
-</script>
-
-</body>
-</html>
-
-<!-- GRACIAS -->
+<!-- GRACIAS (COMPLETO RESTAURADO) -->
 <div id="gracias" class="pantalla">
 <div class="tarjeta" style="text-align:center;">
 
-<h1>¡Gracias por usar OSAC!</h1>
-<p>Tu opinión nos ayuda a mejorar.</p>
+<h1>¡Gracias por usar nuestros servicios!</h1>
+<h2>OSAK</h2>
+
+<p>Tu opinión nos ayuda a seguir mejorando.</p>
+
+<h3>¿Qué te pareció nuestro servicio?</h3>
 
 <button class="btn">😞 Nada</button>
 <button class="btn">🙂 Poco</button>
 <button class="btn">😃 Mucho</button>
 
 <br><br>
-<button class="btn" onclick="mostrar('bienvenida')">Volver al inicio</button>
+<button class="btn" onclick="mostrar('herramientas')">Volver</button>
 
 </div>
 </div>
 
 <script>
-
 function mostrar(id){
-document.querySelectorAll('.pantalla').forEach(p=>{
-p.style.display='none';
-});
-document.getElementById(id).style.display =
-(id==='bienvenida')?'flex':'block';
+document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
+document.getElementById(id).style.display='block';
 }
-
-/* CALCULADORA */
-function agregar(v){
-document.getElementById("calc").value += v;
-}
-
-function limpiar(){
-document.getElementById("calc").value = "";
-}
-
-function calcular(){
-try{
-let r = eval(document.getElementById("calc").value);
-document.getElementById("calc").value = r;
-}catch{
-document.getElementById("calc").value = "Error";
-}
-}
-
-/* ASISTENTE */
-function hablar(){
-let texto = document.getElementById("voz").value;
-
-try{
-let resultado = eval(texto.replace(/×/g,'*').replace(/÷/g,'/'));
-document.getElementById("resp").innerText = "Resultado: " + resultado;
-
-let voz = new SpeechSynthesisUtterance("El resultado es " + resultado);
-speechSynthesis.speak(voz);
-
-}catch{
-document.getElementById("resp").innerText = "No entendí la operación";
-}
-}
-
 </script>
 
 </body>
