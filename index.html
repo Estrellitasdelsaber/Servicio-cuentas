@@ -2,19 +2,29 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAC PRO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>OSAC - App Pro</title>
+
+<meta name="theme-color" content="#16213e">
 
 <style>
 body{
 margin:0;
 font-family:Arial,sans-serif;
+background:#000;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
 }
 
 .pantalla{
 display:none;
-min-height:100vh;
-padding:30px;
+height:100vh;
+overflow:auto;
+padding:25px;
+transition:0.3s ease;
 }
 
 /* BIENVENIDA */
@@ -51,33 +61,33 @@ margin:5px;
 max-width:900px;
 margin:auto;
 background:white;
-padding:30px;
+padding:25px;
 border-radius:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 h2{color:#003366;}
 
-/* ================= CALCULADORA GRANDE ================= */
+/* CALCULADORA PRO GRANDE */
 .calc{
 background:#222;
-padding:25px;
-border-radius:20px;
-color:white;
+padding:20px;
+border-radius:18px;
 max-width:450px;
 margin:auto;
+color:white;
 }
 
 #d{
 width:100%;
-height:80px;
-font-size:40px;
+height:90px;
+font-size:45px;
 text-align:right;
 background:#333;
 color:white;
 border:none;
 border-radius:12px;
-padding:15px;
+padding:12px;
 margin-bottom:15px;
 }
 
@@ -88,13 +98,12 @@ gap:10px;
 }
 
 .grid button{
-height:80px;
-font-size:26px;
+height:85px;
+font-size:28px;
 border:none;
 border-radius:12px;
 background:#444;
 color:white;
-cursor:pointer;
 }
 
 .grid button:active{background:#666}
@@ -104,7 +113,7 @@ cursor:pointer;
 .c{background:red}
 .z{grid-column:span 2}
 
-/* ================= ASISTENTE ================= */
+/* ASISTENTE PRO */
 .asistente{
 text-align:center;
 background:linear-gradient(135deg,#667eea,#764ba2);
@@ -116,7 +125,7 @@ border-radius:20px;
 #btnMic{
 background:white;
 border:none;
-padding:50px;
+padding:55px;
 border-radius:50%;
 font-size:60px;
 cursor:pointer;
@@ -137,30 +146,67 @@ min-height:70px;
 
 <body>
 
-<!-- BIENVENIDA -->
+<!-- BIENVENIDA (TU BASE ORIGINAL) -->
 <div id="bienvenida" class="pantalla" style="display:flex;">
 <div class="logo">OSAC</div>
-<h1>Estrellitas del Saber</h1>
-<button class="btn" onclick="mostrar('menu')">Comenzar ✨</button>
+<h1>Bienvenidos a</h1>
+<h2>Estrellitas del Saber</h2>
+<button class="btn" onclick="mostrar('nosotros')">Comenzar ✨</button>
 </div>
 
-<!-- MENU -->
-<div id="menu" class="pantalla">
+<!-- NOSOTROS -->
+<div id="nosotros" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('bienvenida')">⬅️ Volver</button>
 
-<h2>Herramientas PRO</h2>
+<h2>Nosotros</h2>
+<p>Ayudar a comerciantes del Mercado Unión Dignidad.</p>
+<p>Ser apoyo de confianza en Puno.</p>
+
+<h2>Contacto</h2>
+<p>📱 905 571 181</p>
+<p>✉️ nmgomezmamani@comercial45.edu.pe</p>
+
+<button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
+</div>
+</div>
+
+<!-- CONSEJOS -->
+<div id="consejos" class="pantalla">
+<div class="tarjeta">
+<button class="btn back" onclick="mostrar('nosotros')">⬅️ Volver</button>
+
+<h2>Consejos</h2>
+<p>📒 Anota ventas</p>
+<p>🧮 Usa calculadora</p>
+<p>💰 Ordena dinero</p>
+
+<h2>Pasos</h2>
+<p><b>1.</b> Anota ventas</p>
+<p><b>2.</b> Multiplica</p>
+<p><b>3.</b> Suma</p>
+<p><b>4.</b> Resta gastos</p>
+
+<button class="btn" onclick="mostrar('herramientas')">Siguiente ➜</button>
+</div>
+</div>
+
+<!-- HERRAMIENTAS -->
+<div id="herramientas" class="pantalla">
+<div class="tarjeta">
+<button class="btn back" onclick="mostrar('consejos')">⬅️ Volver</button>
+
+<h2>Herramientas OSAC</h2>
 
 <button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora PRO</button>
 <button class="btn" onclick="mostrar('asistente')">🎤 Asistente IA</button>
-
 </div>
 </div>
 
 <!-- CALCULADORA -->
 <div id="calculadora" class="pantalla">
 <div class="tarjeta">
-<button class="btn back" onclick="mostrar('menu')">⬅️ Volver</button>
+<button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 
 <h2>Calculadora PRO</h2>
 
@@ -193,23 +239,38 @@ min-height:70px;
 <button class="e" onclick="try{d.value=eval(d.value)}catch{d.value='Error'}">=</button>
 </div>
 </div>
-
 </div>
 </div>
 
 <!-- ASISTENTE -->
 <div id="asistente" class="pantalla">
 <div class="tarjeta">
-<button class="btn back" onclick="mostrar('menu')">⬅️ Volver</button>
+<button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 
 <div class="asistente">
 <h2>Asistente IA 🎤</h2>
-<p>Di: “hola”, “15 más 8”, “quién eres”</p>
+<p>Di: hola, quién eres, ayuda, o cálculos</p>
 
 <button id="btnMic">🎤</button>
 
 <div id="salida">Toca el micrófono</div>
 </div>
+</div>
+</div>
+
+<!-- GRACIAS (TU BASE ORIGINAL) -->
+<div id="gracias" class="pantalla">
+<div class="tarjeta" style="text-align:center;">
+<h1>¡Gracias por usar OSAC!</h1>
+
+<p>¿Qué te pareció?</p>
+
+<button class="btn">😞 Nada</button>
+<button class="btn">🙂 Poco</button>
+<button class="btn">😃 Mucho</button>
+
+<br><br>
+<button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 </div>
 </div>
 
@@ -220,21 +281,19 @@ document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
 document.getElementById(id).style.display='block';
 }
 
-/* ================= VOZ ================= */
+/* ===== ASISTENTE PRO ===== */
 const btn = document.getElementById('btnMic');
 const salida = document.getElementById('salida');
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-/* VOZ MÁS FUERTE Y NATURAL */
 function hablar(texto){
 speechSynthesis.cancel();
 
 const voz = new SpeechSynthesisUtterance(texto);
 voz.lang='es-ES';
 voz.rate=0.95;
-voz.pitch=1;
-voz.volume=1; // 🔊 MÁS FUERTE
+voz.volume=1;
 
 speechSynthesis.speak(voz);
 }
@@ -249,73 +308,58 @@ salida.textContent='Escuchando...';
 recognition.start();
 };
 
-/* ===== INTELIGENCIA BÁSICA ===== */
 recognition.onresult=(e)=>{
 let texto=e.results[0][0].transcript.toLowerCase();
-
 let nums=texto.match(/\d+/g);
 
-/* ===== SALUDOS Y CONVERSACIÓN ===== */
+/* IA SIMPLE */
 if(texto.includes("hola")){
-let msg="Hola 👋, soy tu asistente OSAC. Estoy listo para ayudarte con cálculos.";
+let msg="Hola 👋 soy OSAC, listo para ayudarte.";
 salida.textContent=msg;
 hablar(msg);
 return;
 }
 
 if(texto.includes("quién eres")){
-let msg="Soy OSAC, un asistente creado para ayudarte a calcular y aprender.";
+let msg="Soy OSAC, una app educativa para cálculos.";
 salida.textContent=msg;
 hablar(msg);
 return;
 }
 
 if(texto.includes("ayuda")){
-let msg="Puedes decir: suma, resta, por o entre, o decir dos números.";
+let msg="Di dos números y una operación como más, menos, por o entre.";
 salida.textContent=msg;
 hablar(msg);
 return;
 }
 
-/* ===== OPERACIONES ===== */
+/* OPERACIONES */
 if(nums && nums.length>=2){
 
 let n1=parseFloat(nums[0]);
 let n2=parseFloat(nums[1]);
 let msg="";
 
-if(texto.includes('más')||texto.includes('suma')){
-msg=`${n1} más ${n2} es ${n1+n2}`;
-}
-else if(texto.includes('menos')){
-msg=`${n1} menos ${n2} es ${n1-n2}`;
-}
-else if(texto.includes('por')){
-msg=`${n1} por ${n2} es ${n1*n2}`;
-}
-else if(texto.includes('entre')){
-if(n2==0) msg="No se puede dividir entre cero";
-else msg=`${n1} entre ${n2} es ${n1/n2}`;
-}
-else{
-msg="Di: más, menos, por o entre";
-}
+if(texto.includes("más")) msg=`${n1+n2}`;
+else if(texto.includes("menos")) msg=`${n1-n2}`;
+else if(texto.includes("por")) msg=`${n1*n2}`;
+else if(texto.includes("entre")) msg=(n2==0)?"Error":`${n1/n2}`;
+else msg="Di operación";
 
 salida.textContent=msg;
 hablar(msg);
 
 }else{
-let msg="No entendí. Intenta decir dos números.";
+let msg="No entendí bien.";
 salida.textContent=msg;
 hablar(msg);
 }
 };
 
-}else{
-salida.textContent="Tu navegador no soporta voz";
 }
 
 </script>
 
 </body>
-</html>
+  </html>
