@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenida - OSAC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { 
+      font-family: 'Arial', sans-serif; 
+      text-align: center; 
+      padding: 40px 20px; 
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo-texto {
+      font-size: 90px;
+      font-weight: bold;
+      color: #4CAF50;
+      animation: brillo 2s infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes brillo {
+      0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #4CAF50; }
+      50% { text-shadow: 0 0 30px #fff, 0 0 40px #4CAF50; }
+    }
+    h1 { font-size: 28px; margin: 10px 0; }
+    h2 { font-size: 22px; color: #4CAF50; margin: 5px 0 30px; }
+    .btn { 
+      display: inline-block; 
+      padding: 18px 45px; 
+      background: linear-gradient(90deg, #4CAF50, #45a049);
+      color: white; 
+      text-decoration: none; 
+      border-radius: 15px; 
+      font-size: 20px; 
+      font-weight: bold;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-texto">OSAC</div>
+  <h1>Bienvenidos a</h1>
+  <h1>Estrellitas del Saber</h1>
+  <h2>Servicio de Cuentas</h2>
+  <p>La forma más fácil y rápida de calcular</p>
+  <a href="nosotros.html" class="btn">Comenzar ✨</a>
+</body>
+</html>
