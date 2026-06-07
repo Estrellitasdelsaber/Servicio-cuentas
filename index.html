@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAK - Estrellitas del Saber</title>
+<title>OSAC - Estrellitas del Saber</title>
 
 <style>
 body{
@@ -17,7 +17,6 @@ min-height:100vh;
 padding:30px;
 }
 
-/* BIENVENIDA */
 #bienvenida{
 display:flex;
 flex-direction:column;
@@ -36,12 +35,17 @@ color:#4CAF50;
 
 .btn{
 padding:15px 30px;
-font-size:20px;
+font-size:18px;
 border:none;
 border-radius:12px;
 background:#4CAF50;
 color:white;
 cursor:pointer;
+margin:5px;
+}
+
+.back{
+background:#333;
 }
 
 .tarjeta{
@@ -53,8 +57,12 @@ border-radius:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-h2{
-color:#003366;
+h2{ color:#003366; }
+
+input{
+padding:10px;
+margin:5px;
+font-size:16px;
 }
 
 </style>
@@ -64,178 +72,129 @@ color:#003366;
 
 <!-- BIENVENIDA -->
 <div id="bienvenida" class="pantalla" style="display:flex;">
-<div class="logo">OSAK</div>
+<div class="logo">OSAC</div>
 <h1>Bienvenidos a</h1>
 <h1>Estrellitas del Saber</h1>
 <h2>Servicio de Cuentas</h2>
 <p>La forma más fácil y rápida de calcular</p>
-
-<button class="btn" onclick="mostrar('nosotros')">
-Comenzar ✨
-</button>
+<button class="btn" onclick="mostrar('nosotros')">Comenzar ✨</button>
 </div>
 
-<!-- NOSOTROS (COMPLETO ORIGINAL RESTAURADO) -->
+<!-- NOSOTROS -->
 <div id="nosotros" class="pantalla">
 <div class="tarjeta">
+<button class="btn back" onclick="mostrar('bienvenida')">⬅️ Volver</button>
 
 <h2>Nosotros</h2>
-
-<p>
-Ayudar a comerciantes y vendedores del Mercado Unión Dignidad
-a mantenerse al día con su contabilidad.
-</p>
-
-<p>
-Ser el grupo de apoyo de confianza en Puno para comerciantes
-y vendedores.
-</p>
-
-<p>
-<b>PROMETEMOS SEGUIR MEJORANDO ✨</b>
-</p>
+<p>Ayudar a comerciantes del Mercado Unión Dignidad.</p>
+<p>Ser apoyo de confianza en Puno.</p>
 
 <h2>Contacto</h2>
-
 <p>📱 WhatsApp: 905 571 181</p>
-<p>✉️ Correo: nmgomezmamani@comercial45.edu.pe</p>
-<p>🏢 I.E.S. Comercial 45 ERP - Puno</p>
+<p>✉️ correo: nmgomezmamani@comercial45.edu.pe</p>
 
 <button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
-
 </div>
 </div>
 
-<!-- CONSEJOS (COMPLETO ORIGINAL RESTAURADO) -->
+<!-- CONSEJOS -->
 <div id="consejos" class="pantalla">
 <div class="tarjeta">
+<button class="btn back" onclick="mostrar('nosotros')">⬅️ Volver</button>
 
-<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
+<h2>Consejos</h2>
+<p>📒 Anota cada venta</p>
+<p>🧮 Usa calculadora</p>
+<p>💰 Ordena tu dinero</p>
 
-<h3>Consejos</h3>
-<p>📒 Ten una libreta para anotar cada venta.</p>
-<p>🏷️ Mantén los productos ordenados y con precios visibles.</p>
-<p>🧮 Usa una calculadora para evitar errores.</p>
-<p>💰 Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
-<p>✅ Revisa las cuentas al terminar el día.</p>
-
-<h3>Pasos para calcular las ventas</h3>
-
-<p><b>1. Anota lo que vendes</b></p>
-<p>Cada vez que vendas un producto, registra la cantidad y el precio.</p>
-
-<p><b>2. Multiplica</b></p>
-<p>Multiplica la cantidad vendida por el precio del producto.</p>
-
-<p><b>Ejemplo:</b></p>
-<p>5 kilos de papa × S/2 = S/10</p>
-
-<p><b>3. Suma todas las ventas</b></p>
-
-<p><b>4. Resta los gastos</b></p>
-<p>Si gastaste dinero en transporte, bolsas o mercadería, réstalo del total de ventas.</p>
-
-<p><b>5. Conoce tu ganancia</b></p>
-<p>El resultado final te mostrará cuánto ganaste ese día.</p>
-
-<p>
-Llevar cuentas claras ayuda a ahorrar tiempo y evitar errores.
-</p>
+<h2>Pasos</h2>
+<p><b>1.</b> Anota ventas</p>
+<p><b>2.</b> Multiplica</p>
+<p><b>3.</b> Suma</p>
+<p><b>4.</b> Resta gastos</p>
 
 <button class="btn" onclick="mostrar('herramientas')">Siguiente ➜</button>
-
 </div>
 </div>
 
-<!-- HERRAMIENTAS (BÁSICO) -->
+<!-- HERRAMIENTAS -->
 <div id="herramientas" class="pantalla">
 <div class="tarjeta">
+<button class="btn back" onclick="mostrar('consejos')">⬅️ Volver</button>
 
-<h2>Herramientas OSAK</h2>
+<h2>Herramientas OSAC</h2>
 
 <button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente</button>
+<button class="btn" onclick="leerTexto()">🎤 Asistente</button>
 
+<br><br>
 <button class="btn" onclick="mostrar('gracias')">Finalizar ➜</button>
-
 </div>
 </div>
 
-<!-- CALCULADORA (BÁSICA) -->
+<!-- CALCULADORA -->
 <div id="calculadora" class="pantalla">
 <div class="tarjeta">
+<button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 
 <h2>Calculadora</h2>
 
-<input id="d" style="width:100%;font-size:30px;padding:10px;" readonly>
+<input type="number" id="n1" placeholder="Número 1">
+<input type="number" id="n2" placeholder="Número 2">
 
-<br><br>
+<br>
 
-<button onclick="d.value+='1'">1</button>
-<button onclick="d.value+='2'">2</button>
-<button onclick="d.value+='3'">3</button>
-<button onclick="d.value+='+'">+</button><br><br>
+<button class="btn" onclick="sumar()">Sumar</button>
+<button class="btn" onclick="restar()">Restar</button>
 
-<button onclick="d.value+='4'">4</button>
-<button onclick="d.value+='5'">5</button>
-<button onclick="d.value+='6'">6</button>
-<button onclick="d.value+='-'">-</button><br><br>
-
-<button onclick="d.value+='7'">7</button>
-<button onclick="d.value+='8'">8</button>
-<button onclick="d.value+='9'">9</button>
-<button onclick="d.value+='*'">×</button><br><br>
-
-<button onclick="d.value+='0'">0</button>
-<button onclick="d.value=''">C</button>
-<button onclick="d.value=eval(d.value)">=</button>
-<button onclick="d.value+='/'">÷</button>
-
-<br><br>
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
-
+<h3 id="resultado">Resultado: </h3>
 </div>
 </div>
 
-<!-- ASISTENTE (BÁSICO) -->
-<div id="asistente" class="pantalla">
-<div class="tarjeta">
-
-<h2>Asistente (básico)</h2>
-
-<p>Función simple activada.</p>
-
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
-
-</div>
-</div>
-
-<!-- GRACIAS (COMPLETO RESTAURADO) -->
+<!-- GRACIAS -->
 <div id="gracias" class="pantalla">
 <div class="tarjeta" style="text-align:center;">
+<h1>¡Gracias por usar OSAC!</h1>
 
-<h1>¡Gracias por usar nuestros servicios!</h1>
-<h2>OSAK</h2>
-
-<p>Tu opinión nos ayuda a seguir mejorando.</p>
-
-<h3>¿Qué te pareció nuestro servicio?</h3>
+<p>¿Qué te pareció?</p>
 
 <button class="btn">😞 Nada</button>
 <button class="btn">🙂 Poco</button>
 <button class="btn">😃 Mucho</button>
 
 <br><br>
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
-
+<button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 </div>
 </div>
 
 <script>
+
 function mostrar(id){
 document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
 document.getElementById(id).style.display='block';
 }
+
+// CALCULADORA
+function sumar(){
+let a = parseFloat(document.getElementById("n1").value) || 0;
+let b = parseFloat(document.getElementById("n2").value) || 0;
+document.getElementById("resultado").innerText = "Resultado: " + (a+b);
+}
+
+function restar(){
+let a = parseFloat(document.getElementById("n1").value) || 0;
+let b = parseFloat(document.getElementById("n2").value) || 0;
+document.getElementById("resultado").innerText = "Resultado: " + (a-b);
+}
+
+// ASISTENTE (LEE TEXTO)
+function leerTexto(){
+let texto = "Bienvenido a OSAC. Este sistema ayuda a los vendedores a calcular sus ventas de forma fácil.";
+let voz = new SpeechSynthesisUtterance(texto);
+voz.lang = "es-ES";
+speechSynthesis.speak(voz);
+}
+
 </script>
 
 </body>
