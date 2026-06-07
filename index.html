@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OSAC - Estrellitas del Saber</title>
 
-<meta name="theme-color" content="#16213e">
-
 <style>
 body{
 margin:0;
@@ -16,16 +14,10 @@ font-family:Arial,sans-serif;
 .pantalla{
 display:none;
 min-height:100vh;
-padding:25px;
-animation:fade .2s ease-in;
+padding:30px;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-/* BIENVENIDA */
+/* BIENVENIDA (SIN CAMBIOS) */
 #bienvenida{
 display:flex;
 flex-direction:column;
@@ -50,7 +42,7 @@ border-radius:12px;
 background:#4CAF50;
 color:white;
 cursor:pointer;
-margin:6px;
+margin:5px;
 }
 
 .back{background:#333;}
@@ -59,19 +51,19 @@ margin:6px;
 max-width:900px;
 margin:auto;
 background:white;
-padding:25px;
+padding:30px;
 border-radius:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 h2{color:#003366;}
 
-/* CALCULADORA PRO */
+/* CALCULADORA MEJORADA */
 .calc{
 background:#1e1e1e;
 padding:20px;
 border-radius:20px;
-max-width:480px;
+max-width:500px;
 margin:auto;
 color:white;
 }
@@ -111,7 +103,7 @@ color:white;
 .c{background:red}
 .z{grid-column:span 2}
 
-/* ASISTENTE PRO */
+/* ASISTENTE */
 .asistente{
 text-align:center;
 background:linear-gradient(135deg,#667eea,#764ba2);
@@ -144,52 +136,105 @@ min-height:70px;
 
 <body>
 
-<!-- BIENVENIDA -->
+<!-- BIENVENIDA (ORIGINAL RESTAURADA) -->
 <div id="bienvenida" class="pantalla" style="display:flex;">
 <div class="logo">OSAC</div>
+<h1>Bienvenidos a</h1>
 <h1>Estrellitas del Saber</h1>
+<h2>Servicio de Cuentas</h2>
+<p>La forma más fácil y rápida de calcular</p>
 <button class="btn" onclick="mostrar('nosotros')">Comenzar ✨</button>
 </div>
 
-<!-- NOSOTROS -->
+<!-- NOSOTROS (ORIGINAL SIN CAMBIOS) -->
 <div id="nosotros" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('bienvenida')">⬅️ Volver</button>
 
 <h2>Nosotros</h2>
-<p>Ayudamos a comerciantes del mercado Unión Dignidad.</p>
+<p>
+Ayudar a comerciantes y vendedores del Mercado Unión Dignidad
+a mantenerse al día con su contabilidad.
+</p>
+
+<p>
+Ser el grupo de apoyo de confianza en Puno para comerciantes
+y vendedores.
+</p>
+
+<p>
+<b>PROMETEMOS SEGUIR MEJORANDO ✨</b>
+</p>
+
+<h2>Contacto</h2>
+<p>📱 WhatsApp: 905 571 181</p>
+<p>✉️ Correo: nmgomezmamani@comercial45.edu.pe</p>
+<p>🏢 I.E.S. Comercial 45 ERP - Puno</p>
 
 <button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
 </div>
 </div>
 
-<!-- CONSEJOS -->
+<!-- CONSEJOS (COMPLETO RESTAURADO) -->
 <div id="consejos" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('nosotros')">⬅️ Volver</button>
 
-<h2>Consejos</h2>
-<p>📒 Anota ventas</p>
-<p>🧮 Usa calculadora</p>
-<p>💰 Ordena dinero</p>
+<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
+
+<h3>Consejos</h3>
+<p>📒 Ten una libreta para anotar cada venta.</p>
+<p>🏷️ Mantén los productos ordenados y con precios visibles.</p>
+<p>🧮 Usa una calculadora para evitar errores.</p>
+<p>💰 Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
+<p>✅ Revisa las cuentas al terminar el día.</p>
+
+<h3>Pasos para calcular las ventas</h3>
+<p><b>1. Anota lo que vendes</b></p>
+<p>Cada vez que vendas un producto, registra la cantidad y el precio.</p>
+
+<p><b>2. Multiplica</b></p>
+<p>Multiplica la cantidad vendida por el precio del producto.</p>
+
+<p><b>Ejemplo:</b></p>
+<p>5 kilos de papa × S/2 = S/10</p>
+
+<p><b>3. Suma todas las ventas</b></p>
+<p>Junta el dinero obtenido de cada producto.</p>
+
+<p><b>4. Resta los gastos</b></p>
+<p>Si gastaste dinero en transporte, bolsas o mercadería, réstalo del total.</p>
+
+<p><b>5. Conoce tu ganancia</b></p>
+<p>El resultado final te mostrará cuánto ganaste ese día.</p>
+
+<h3>Mensaje final</h3>
+<p>
+Llevar cuentas claras ayuda a ahorrar tiempo,
+evitar errores y conocer cuánto dinero se gana cada día.
+Con organización y práctica, cualquier vendedor puede hacer
+sus cálculos de manera rápida y sencilla.
+</p>
 
 <button class="btn" onclick="mostrar('herramientas')">Siguiente ➜</button>
 </div>
 </div>
 
-<!-- HERRAMIENTAS -->
+<!-- HERRAMIENTAS (SIN CAMBIOS) -->
 <div id="herramientas" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('consejos')">⬅️ Volver</button>
 
 <h2>Herramientas OSAC</h2>
 
-<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora PRO</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente IA</button>
+<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
+<button class="btn" onclick="mostrar('asistente')">🎤 Asistente de Voz</button>
+
+<button class="btn" onclick="mostrar('gracias')">Finalizar ➜</button>
 </div>
 </div>
 
-<!-- CALCULADORA -->
+<!-- CALCULADORA PRO -->
 <div id="calculadora" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
@@ -227,14 +272,14 @@ min-height:70px;
 </div>
 </div>
 
-<!-- ASISTENTE -->
+<!-- ASISTENTE IA -->
 <div id="asistente" class="pantalla">
 <div class="tarjeta">
 <button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 
 <div class="asistente">
-<h2>Asistente IA 🎤</h2>
-<p>Di: hola, quién eres, ayuda, o cálculos</p>
+<h2>Asistente de Voz 🎤</h2>
+<p>Di: hola, 15 más 8, quién eres, ayuda</p>
 
 <button id="btnMic">🎤</button>
 
@@ -243,14 +288,20 @@ min-height:70px;
 </div>
 </div>
 
-<!-- GRACIAS -->
+<!-- GRACIAS (COMPLETO RESTAURADO) -->
 <div id="gracias" class="pantalla">
 <div class="tarjeta" style="text-align:center;">
-<h1>¡Gracias por usar OSAC!</h1>
 
-<button class="btn">😞</button>
-<button class="btn">🙂</button>
-<button class="btn">😃</button>
+<h1>¡Gracias por usar nuestros servicios!</h1>
+<h2>OSAC</h2>
+
+<p>Tu opinión nos ayuda a seguir mejorando.</p>
+
+<h3>¿Qué te pareció nuestro servicio?</h3>
+
+<button class="btn">😞 Nada</button>
+<button class="btn">🙂 Poco</button>
+<button class="btn">😃 Mucho</button>
 
 <button class="btn back" onclick="mostrar('herramientas')">⬅️ Volver</button>
 </div>
@@ -258,14 +309,14 @@ min-height:70px;
 
 <script>
 
-/* ================= NAVEGACIÓN FIABLE ================= */
+/* NAVEGACIÓN SEGURA */
 function mostrar(id){
 document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
 const el=document.getElementById(id);
 if(el) el.style.display='block';
 }
 
-/* ================= ASISTENTE IA ================= */
+/* ASISTENTE */
 const btn=document.getElementById('btnMic');
 const salida=document.getElementById('salida');
 
@@ -291,7 +342,6 @@ r.onresult=(e)=>{
 let t=e.results[0][0].transcript.toLowerCase();
 let n=t.match(/\d+/g);
 
-/* CONVERSACIÓN */
 if(t.includes("hola")){
 salida.textContent="Hola 👋";
 hablar("Hola, soy OSAC");
@@ -300,19 +350,17 @@ return;
 
 if(t.includes("quién eres")){
 salida.textContent="Soy OSAC";
-hablar("Soy OSAC, tu asistente");
+hablar("Soy OSAC");
 return;
 }
 
 if(t.includes("ayuda")){
-salida.textContent="Usa números + operación";
+salida.textContent="Usa operaciones básicas";
 hablar("Di dos números y operación");
 return;
 }
 
-/* OPERACIONES */
 if(n && n.length>=2){
-
 let a=+n[0],b=+n[1];
 let res;
 
@@ -326,7 +374,7 @@ salida.textContent=res;
 hablar("El resultado es " + res);
 
 }else{
-salida.textContent="No entendí números";
+salida.textContent="No entendí";
 hablar("No entendí");
 }
 };
