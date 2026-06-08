@@ -3,239 +3,571 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAK - Estrellitas del Saber</title>
+<title>OSAC - Asesoría de Cuentas</title>
 
 <style>
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-.pantalla{
+body{
+background:linear-gradient(135deg,#eaf3ff,#ffffff);
+overflow-x:hidden;
+}
+
+.seccion{
 display:none;
 min-height:100vh;
-padding:30px;
-}
-
-/* BIENVENIDA */
-#bienvenida{
-display:flex;
-flex-direction:column;
+padding:40px 20px;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
-background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
-color:white;
 }
 
-.logo{
-font-size:80px;
-font-weight:bold;
-color:#4CAF50;
+.activa{
+display:flex;
 }
 
-.btn{
-padding:15px 30px;
-font-size:20px;
-border:none;
-border-radius:12px;
-background:#4CAF50;
-color:white;
-cursor:pointer;
-}
-
-.tarjeta{
-max-width:900px;
-margin:auto;
+.contenedor{
+max-width:1000px;
 background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1{
+color:#0d6efd;
+font-size:3rem;
+margin-bottom:15px;
 }
 
 h2{
-color:#003366;
+color:#0d6efd;
+margin-bottom:15px;
 }
 
-</style>
-</head>
+p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:10px;
+}
 
+.logo{
+font-size:70px;
+margin:20px;
+}
+
+.btn{
+background:#0d6efd;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+margin:8px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+background:#084298;
+}
+
+.info{
+text-align:left;
+margin-top:20px;
+}
+
+.contacto{
+margin-top:20px;
+padding:15px;
+background:#f2f7ff;
+border-radius:15px;
+}
+
+.consejos{
+text-align:left;
+margin-top:20px;
+}
+
+.consejos p{
+margin-bottom:15px;
+}
+</style>
+
+</head>
 <body>
 
 <!-- BIENVENIDA -->
-<div id="bienvenida" class="pantalla" style="display:flex;">
-<div class="logo">OSAK</div>
-<h1>Bienvenidos a</h1>
-<h1>Estrellitas del Saber</h1>
-<h2>Servicio de Cuentas</h2>
-<p>La forma más fácil y rápida de calcular</p>
+
+<section id="inicio" class="seccion activa">
+
+<div class="contenedor">
+
+<h1>BIENVENIDO A OSAC</h1>
+
+<p>
+Ofrecemos servicios de asesoría de cuentas
+</p>
+
+<div class="logo">⭐</div>
+
+<p>
+Para hacer tus cuentas más sencillas
+</p>
+
+<br>
 
 <button class="btn" onclick="mostrar('nosotros')">
-Comenzar ✨
+Comenzar
 </button>
+
 </div>
 
-<!-- NOSOTROS (COMPLETO ORIGINAL RESTAURADO) -->
-<div id="nosotros" class="pantalla">
-<div class="tarjeta">
+</section>
 
-<h2>Nosotros</h2>
+<!-- NOSOTROS -->
+
+<section id="nosotros" class="seccion">
+
+<div class="contenedor">
+
+<h1>OSAC</h1>
+
+<h2>Sobre Nosotros</h2>
+
+<div class="info">
 
 <p>
-Ayudar a comerciantes y vendedores del Mercado Unión Dignidad
-a mantenerse al día con su contabilidad.
+<b>Misión:</b>
+Ayudar a los vendedores y comerciantes de los mercados de Puno a facilitar el cálculo de sus cuentas mediante herramientas prácticas, sencillas y accesibles para todas las edades, promoviendo una mejor organización financiera y reduciendo errores en los cálculos diarios.
 </p>
 
 <p>
-Ser el grupo de apoyo de confianza en Puno para comerciantes
-y vendedores.
+<b>Visión:</b>
+Ser una solución innovadora y reconocida que contribuya al desarrollo de los comerciantes, brindando herramientas tecnológicas fáciles de usar para mejorar la administración de sus ventas y cuentas en el futuro.
+</p>
+
+</div>
+
+<div class="contacto">
+
+<h2>Contáctanos</h2>
+
+<p>Correo: contacto@osac.com</p>
+
+<p>
+WhatsApp:
+<a href="https://wa.me/519055771181" target="_blank">
+9055771181
+</a>
+</p>
+
+</div>
+
+<br>
+
+<p>
+Estudiantes de secundaria
 </p>
 
 <p>
-<b>PROMETEMOS SEGUIR MEJORANDO ✨</b>
+Institución Educativa Comercial 45 MERP1 Perú
 </p>
 
-<h2>Contacto</h2>
+<br>
 
-<p>📱 WhatsApp: 905 571 181</p>
-<p>✉️ Correo: nmgomezmamani@comercial45.edu.pe</p>
-<p>🏢 I.E.S. Comercial 45 ERP - Puno</p>
+<button class="btn" onclick="mostrar('inicio')">
+Volver
+</button>
 
-<button class="btn" onclick="mostrar('consejos')">Siguiente ➜</button>
+<button class="btn" onclick="mostrar('consejos')">
+Siguiente
+</button>
 
 </div>
-</div>
 
-<!-- CONSEJOS (COMPLETO ORIGINAL RESTAURADO) -->
-<div id="consejos" class="pantalla">
-<div class="tarjeta">
+</section>
 
-<h2>Cómo hacer más fáciles las cuentas de las ventas diarias</h2>
+<!-- CONSEJOS -->
 
-<h3>Consejos</h3>
-<p>📒 Ten una libreta para anotar cada venta.</p>
-<p>🏷️ Mantén los productos ordenados y con precios visibles.</p>
-<p>🧮 Usa una calculadora para evitar errores.</p>
-<p>💰 Guarda el dinero en diferentes espacios según el valor de los billetes y monedas.</p>
-<p>✅ Revisa las cuentas al terminar el día.</p>
+<section id="consejos" class="seccion">
 
-<h3>Pasos para calcular las ventas</h3>
+<div class="contenedor">
 
-<p><b>1. Anota lo que vendes</b></p>
-<p>Cada vez que vendas un producto, registra la cantidad y el precio.</p>
+<h1>Consejos para Facilitar tus Cuentas</h1>
 
-<p><b>2. Multiplica</b></p>
-<p>Multiplica la cantidad vendida por el precio del producto.</p>
-
-<p><b>Ejemplo:</b></p>
-<p>5 kilos de papa × S/2 = S/10</p>
-
-<p><b>3. Suma todas las ventas</b></p>
-
-<p><b>4. Resta los gastos</b></p>
-<p>Si gastaste dinero en transporte, bolsas o mercadería, réstalo del total de ventas.</p>
-
-<p><b>5. Conoce tu ganancia</b></p>
-<p>El resultado final te mostrará cuánto ganaste ese día.</p>
+<div class="consejos">
 
 <p>
-Llevar cuentas claras ayuda a ahorrar tiempo y evitar errores.
+1. Anota todas tus ventas diariamente. Llevar un registro permite conocer cuánto dinero ingresó realmente durante el día.
 </p>
 
-<button class="btn" onclick="mostrar('herramientas')">Siguiente ➜</button>
+<p>
+2. Separa siempre los gastos de los ingresos. Esto ayuda a saber si tu negocio está generando ganancias o pérdidas.
+</p>
+
+<p>
+3. Utiliza una calculadora para verificar operaciones antes de cobrar o entregar vuelto.
+</p>
+
+<p>
+4. Organiza tus productos por categorías para encontrar rápidamente precios y cantidades.
+</p>
+
+<p>
+5. Guarda comprobantes y registros importantes para futuras revisiones.
+</p>
+
+<p>
+6. Realiza balances diarios para conocer cuánto ganaste y cuánto invertiste.
+</p>
+
+<p>
+7. Revisa dos veces los cálculos cuando trabajes con cantidades grandes.
+</p>
+
+<p>
+8. Mantén un control de las deudas y pagos pendientes.
+</p>
+
+<p>
+9. Utiliza herramientas digitales para ahorrar tiempo y reducir errores.
+</p>
+
+<p>
+10. Comparte estos hábitos con tu familia y compañeros para mejorar la administración económica.
+</p>
+
+<p>
+La buena organización financiera permite tomar mejores decisiones, evitar pérdidas y brindar una mejor atención a los clientes.
+</p>
 
 </div>
+
+<br>
+
+<button class="btn" onclick="mostrar('nosotros')">
+Volver
+</button>
+
+<button class="btn" onclick="mostrar('calculadora')">
+Calculadora
+</button>
+
+<button class="btn" onclick="mostrar('asistente')">
+Asistente de Voz
+</button>
+
 </div>
 
-<!-- HERRAMIENTAS (BÁSICO) -->
-<div id="herramientas" class="pantalla">
-<div class="tarjeta">
+  </section><!-- CALCULADORA -->
 
-<h2>Herramientas OSAK</h2>
+<section id="calculadora" class="seccion">
 
-<button class="btn" onclick="mostrar('calculadora')">🧮 Calculadora</button>
-<button class="btn" onclick="mostrar('asistente')">🎤 Asistente</button>
+<div class="contenedor">
 
-<button class="btn" onclick="mostrar('gracias')">Finalizar ➜</button>
+<h1>Calculadora OSAC</h1>
+
+<p>
+Realiza operaciones básicas de suma, resta, multiplicación y división.
+</p>
+
+<br>
+
+<input
+type="text"
+id="pantalla"
+readonly
+style="
+width:100%;
+max-width:400px;
+padding:20px;
+font-size:30px;
+text-align:right;
+border-radius:15px;
+border:2px solid #0d6efd;
+margin-bottom:15px;
+">
+
+<div
+style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+max-width:400px;
+margin:auto;
+">
+
+<button class="btn" onclick="agregar('7')">7</button>
+<button class="btn" onclick="agregar('8')">8</button>
+<button class="btn" onclick="agregar('9')">9</button>
+<button class="btn" onclick="agregar('/')">÷</button>
+
+<button class="btn" onclick="agregar('4')">4</button>
+<button class="btn" onclick="agregar('5')">5</button>
+<button class="btn" onclick="agregar('6')">6</button>
+<button class="btn" onclick="agregar('*')">×</button>
+
+<button class="btn" onclick="agregar('1')">1</button>
+<button class="btn" onclick="agregar('2')">2</button>
+<button class="btn" onclick="agregar('3')">3</button>
+<button class="btn" onclick="agregar('-')">−</button>
+
+<button class="btn" onclick="agregar('0')">0</button>
+<button class="btn" onclick="agregar('.')">.</button>
+<button class="btn" onclick="calcular()">=</button>
+<button class="btn" onclick="agregar('+')">+</button>
 
 </div>
-</div>
 
-<!-- CALCULADORA (BÁSICA) -->
-<div id="calculadora" class="pantalla">
-<div class="tarjeta">
+<br>
 
-<h2>Calculadora</h2>
-
-<input id="d" style="width:100%;font-size:30px;padding:10px;" readonly>
+<button class="btn" onclick="limpiar()">
+Limpiar
+</button>
 
 <br><br>
 
-<button onclick="d.value+='1'">1</button>
-<button onclick="d.value+='2'">2</button>
-<button onclick="d.value+='3'">3</button>
-<button onclick="d.value+='+'">+</button><br><br>
+<button class="btn" onclick="mostrar('consejos')">
+Volver
+</button>
 
-<button onclick="d.value+='4'">4</button>
-<button onclick="d.value+='5'">5</button>
-<button onclick="d.value+='6'">6</button>
-<button onclick="d.value+='-'">-</button><br><br>
+<button class="btn" onclick="mostrar('gracias')">
+Finalizar
+</button>
 
-<button onclick="d.value+='7'">7</button>
-<button onclick="d.value+='8'">8</button>
-<button onclick="d.value+='9'">9</button>
-<button onclick="d.value+='*'">×</button><br><br>
+</div>
 
-<button onclick="d.value+='0'">0</button>
-<button onclick="d.value=''">C</button>
-<button onclick="d.value=eval(d.value)">=</button>
-<button onclick="d.value+='/'">÷</button>
+</section>
+
+<!-- ASISTENTE -->
+
+<section id="asistente" class="seccion">
+
+<div class="contenedor">
+
+<h1>Asistente de Voz OSAC</h1>
+
+<p>
+Presiona el botón y habla.
+</p>
+
+<p>
+Puedes decir:
+"Hola"
+o
+"5 más 5"
+</p>
+
+<br>
+
+<button class="btn" onclick="escuchar()">
+🎤 Hablar
+</button>
 
 <br><br>
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
+
+<h2 id="respuesta">
+Esperando instrucciones...
+</h2>
+
+<br>
+
+<button class="btn" onclick="mostrar('consejos')">
+Volver
+</button>
+
+<button class="btn" onclick="mostrar('gracias')">
+Finalizar
+</button>
 
 </div>
-</div>
 
-<!-- ASISTENTE (BÁSICO) -->
-<div id="asistente" class="pantalla">
-<div class="tarjeta">
+</section>
 
-<h2>Asistente (básico)</h2>
+<!-- AGRADECIMIENTO -->
 
-<p>Función simple activada.</p>
+<section id="gracias" class="seccion">
 
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
+<div class="contenedor">
 
-</div>
-</div>
+<h1>Gracias por utilizar OSAC</h1>
 
-<!-- GRACIAS (COMPLETO RESTAURADO) -->
-<div id="gracias" class="pantalla">
-<div class="tarjeta" style="text-align:center;">
+<p>
+Esperamos haber ayudado a facilitar tus cuentas.
+</p>
 
-<h1>¡Gracias por usar nuestros servicios!</h1>
-<h2>OSAK</h2>
+<br>
 
-<p>Tu opinión nos ayuda a seguir mejorando.</p>
+<h2>
+¿Qué te pareció nuestro servicio?
+</h2>
 
-<h3>¿Qué te pareció nuestro servicio?</h3>
+<br>
 
-<button class="btn">😞 Nada</button>
-<button class="btn">🙂 Poco</button>
-<button class="btn">😃 Mucho</button>
+<button class="btn" onclick="opinion()">
+Mucho
+</button>
+
+<button class="btn" onclick="opinion()">
+Poco
+</button>
+
+<button class="btn" onclick="opinion()">
+Nada
+</button>
 
 <br><br>
-<button class="btn" onclick="mostrar('herramientas')">Volver</button>
+
+<p id="mensajeFinal"></p>
+
+<br>
+
+<button class="btn" onclick="mostrar('inicio')">
+Volver al Inicio
+</button>
 
 </div>
-</div>
+
+</section>
 
 <script>
+
 function mostrar(id){
-document.querySelectorAll('.pantalla').forEach(p=>p.style.display='none');
-document.getElementById(id).style.display='block';
+
+document.querySelectorAll('.seccion')
+.forEach(sec=>{
+sec.classList.remove('activa');
+});
+
+document
+.getElementById(id)
+.classList.add('activa');
+
 }
+
+function agregar(valor){
+
+document.getElementById('pantalla').value+=valor;
+
+}
+
+function limpiar(){
+
+document.getElementById('pantalla').value='';
+
+}
+
+function calcular(){
+
+try{
+
+document.getElementById('pantalla').value=
+eval(document.getElementById('pantalla').value);
+
+}
+
+catch{
+
+alert('Operación incorrecta');
+
+}
+
+}
+
+function opinion(){
+
+document.getElementById('mensajeFinal').innerHTML=
+'Gracias por su opinión. Continuaremos mejorando nuestro módulo para brindar un mejor servicio.';
+
+}
+
+function escuchar(){
+
+const SpeechRecognition =
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+
+alert(
+'Tu navegador no soporta reconocimiento de voz.'
+);
+
+return;
+
+}
+
+const reconocimiento =
+new SpeechRecognition();
+
+reconocimiento.lang='es-ES';
+
+reconocimiento.start();
+
+reconocimiento.onresult=function(event){
+
+let texto=
+event.results[0][0].transcript.toLowerCase();
+
+let respuesta=
+'No entendí la instrucción.';
+
+if(texto.includes('hola')){
+
+respuesta='Hola, bienvenido a OSAC.';
+
+}
+
+try{
+
+let expresion=
+texto
+.replace(/más/g,'+')
+.replace(/menos/g,'-');
+
+if(/[0-9]/.test(expresion)){
+
+let resultado=
+eval(
+expresion.replace(
+/[^0-9+\-*/().]/g,
+''
+)
+);
+
+if(!isNaN(resultado)){
+
+respuesta=
+'El resultado es ' + resultado;
+
+}
+
+}
+
+}catch(error){}
+
+document.getElementById(
+'respuesta'
+).innerHTML=respuesta;
+
+speechSynthesis.speak(
+new SpeechSynthesisUtterance(
+respuesta
+)
+);
+
+}
+
+}
+
 </script>
 
 </body>
