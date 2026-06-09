@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAC - Asesoría de Cuentas</title>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OSAC - Asesoría de Cuentas</title><style>
 
-<style>
 *{
 margin:0;
 padding:0;
@@ -14,7 +8,12 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#eaf3ff,#ffffff);
+background:linear-gradient(
+135deg,
+#dff1ff,
+#ffffff,
+#cfe8ff
+);
 overflow-x:hidden;
 }
 
@@ -36,30 +35,69 @@ display:flex;
 max-width:1000px;
 background:white;
 padding:40px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+border-radius:30px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.contenedor:hover{
+transform:translateY(-5px);
 }
 
 h1{
-color:#0d6efd;
 font-size:3rem;
+font-family:'Comic Sans MS',cursive;
+color:#0d6efd;
+text-shadow:
+0 0 10px #87c4ff,
+0 0 20px #87c4ff,
+0 0 40px #87c4ff;
+animation:brillo 2s infinite alternate;
 margin-bottom:15px;
 }
 
 h2{
-color:#0d6efd;
+font-family:'Trebuchet MS';
+color:#2574d9;
 margin-bottom:15px;
 }
 
 p{
 font-size:18px;
 line-height:1.8;
-margin-bottom:10px;
+color:#333;
+}
+
+@keyframes brillo{
+
+from{
+text-shadow:0 0 5px #87c4ff;
+}
+
+to{
+text-shadow:
+0 0 15px #87c4ff,
+0 0 30px #87c4ff,
+0 0 50px #87c4ff;
+}
+
 }
 
 .logo{
-font-size:70px;
-margin:20px;
+font-size:90px;
+animation:giro 4s linear infinite;
+}
+
+@keyframes giro{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
 }
 
 .btn{
@@ -67,7 +105,7 @@ background:#0d6efd;
 color:white;
 border:none;
 padding:15px 30px;
-border-radius:12px;
+border-radius:15px;
 font-size:18px;
 cursor:pointer;
 margin:8px;
@@ -79,233 +117,243 @@ transform:scale(1.05);
 background:#084298;
 }
 
-.info{
-text-align:left;
-margin-top:20px;
+.btn-inicio{
+background:linear-gradient(
+45deg,
+#0d6efd,
+#61b4ff
+);
+font-size:22px;
+font-weight:bold;
+box-shadow:0 0 20px #61b4ff;
+animation:pulso 1.5s infinite;
+}
+
+@keyframes pulso{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
 }
 
 .contacto{
+background:linear-gradient(
+135deg,
+#eaf4ff,
+#ffffff
+);
+border:4px double #0d6efd;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,.1);
 margin-top:20px;
+}
+
+.tarjetaConsejo{
+display:flex;
+align-items:center;
+gap:15px;
 padding:15px;
-background:#f2f7ff;
-border-radius:15px;
-}
-
-.consejos{
+margin:15px 0;
+border-radius:20px;
+background:#f5fbff;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
 text-align:left;
-margin-top:20px;
 }
 
-.consejos p{
-margin-bottom:15px;
+.tarjetaConsejo img{
+width:60px;
+height:60px;
 }
-</style>
 
-</head>
-<body>
+input,
+textarea{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #0d6efd;
+margin:8px 0;
+}
 
-<!-- BIENVENIDA -->
+textarea{
+height:120px;
+resize:none;
+}
 
-<section id="inicio" class="seccion activa">
+</style></head><body><!-- BIENVENIDA --><section id="inicio" class="seccion activa"><div class="contenedor"><h1>BIENVENIDO A OSAC</h1><p>
+Ofrecemos servicios de asesoría de cuentas para comerciantes, vendedores de mercados, estudiantes y emprendedores.
+</p><div class="logo">⭐</div><p>
+Facilitamos tus cuentas de manera rápida, sencilla y accesible para todas las edades.
+</p><br><h2>Registro de Usuario</h2><p>
+Regístrate para acceder a las herramientas de OSAC.
+</p><input
+type="email"
+id="usuario"
+placeholder="Ingrese su correo electrónico">
 
-<div class="contenedor">
+<input
+type="password"
+id="clave"
+placeholder="Ingrese una contraseña">
 
-<h1>BIENVENIDO A OSAC</h1>
-
-<p>
-Ofrecemos servicios de asesoría de cuentas
-</p>
-
-<div class="logo">⭐</div>
-
-<p>
-Para hacer tus cuentas más sencillas
-</p>
-
-<br>
-
-<button class="btn" onclick="mostrar('nosotros')">
-Comenzar
+<button
+class="btn"
+onclick="registrar()">
+Registrarse
 </button>
 
-</div>
+<br><br>
 
-</section>
+<button
+class="btn btn-inicio"
+onclick="mostrar('nosotros')">
+🚀 Comenzar
+</button>
 
-<!-- NOSOTROS -->
-
-<section id="nosotros" class="seccion">
-
-<div class="contenedor">
-
-<h1>OSAC</h1>
-
-<h2>Sobre Nosotros</h2>
-
-<div class="info">
-
-<p>
+</div></section><!-- NOSOTROS --><section id="nosotros" class="seccion"><div class="contenedor"><h1>OSAC</h1><h2>Sobre Nosotros</h2><p>
+OSAC es una propuesta desarrollada para ayudar a comerciantes y vendedores a realizar sus cuentas de manera más rápida, organizada y segura.
+</p><div class="info"><p>
 <b>Misión:</b>
 Ayudar a los vendedores y comerciantes de los mercados de Puno a facilitar el cálculo de sus cuentas mediante herramientas prácticas, sencillas y accesibles para todas las edades, promoviendo una mejor organización financiera y reduciendo errores en los cálculos diarios.
-</p>
-
-<p>
+</p><p>
 <b>Visión:</b>
 Ser una solución innovadora y reconocida que contribuya al desarrollo de los comerciantes, brindando herramientas tecnológicas fáciles de usar para mejorar la administración de sus ventas y cuentas en el futuro.
-</p>
-
-</div>
-
-<div class="contacto">
-
-<h2>Contáctanos</h2>
-
-<p>Correo: contacto@osac.com</p>
-
-<p>
-WhatsApp:
+</p></div><div class="contacto"><h2>📩 Contáctanos</h2><p>
+Estamos disponibles para ayudarte con dudas relacionadas con cuentas, ventas y organización financiera.
+</p><p>
+📧 Correo:
+contacto@osac.com
+</p><p>
+📱 WhatsApp:
 <a href="https://wa.me/519055771181" target="_blank">
 9055771181
 </a>
-</p>
-
-</div>
-
-<br>
-
-<p>
-Estudiantes de secundaria
-</p>
-
-<p>
-Institución Educativa Comercial 45 MERP1 Perú
-</p>
-
-<br>
-
-<button class="btn" onclick="mostrar('inicio')">
-Volver
+</p><p>
+🕒 Horario:
+Lunes a Viernes
+8:00 a.m. - 5:00 p.m.
+</p></div><br><p>
+👨‍🎓 Estudiantes de Secundaria
+</p><p>
+🏫 Institución Educativa Comercial 45 MERP1 - Perú
+</p><br><button
+class="btn"
+onclick="mostrar('inicio')">
+⬅ Volver
 </button>
 
-<button class="btn" onclick="mostrar('consejos')">
-Siguiente
+<button
+class="btn"
+onclick="mostrar('consejos')">
+Siguiente ➜
 </button>
 
-</div>
-
-</section>
-
-<!-- CONSEJOS -->
-
-<section id="consejos" class="seccion">
-
-<div class="contenedor">
-
-<h1>Consejos para Facilitar tus Cuentas</h1>
-
-<div class="consejos">
-
+</div></section><!-- CONSEJOS --><section id="consejos" class="seccion"><div class="contenedor"><h1>Consejos para Facilitar tus Cuentas</h1><p>
+Aplica estos consejos para organizar mejor tus ventas y evitar errores en tus cuentas diarias.
+</p><br><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
 <p>
-1. Anota todas tus ventas diariamente. Llevar un registro permite conocer cuánto dinero ingresó realmente durante el día.
+<b>1. Registra todas tus ventas.</b><br>
+Anota diariamente cada venta realizada para conocer exactamente cuánto dinero ingresó durante el día.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
 <p>
-2. Separa siempre los gastos de los ingresos. Esto ayuda a saber si tu negocio está generando ganancias o pérdidas.
+<b>2. Separa ingresos y gastos.</b><br>
+Esto te permitirá saber si tu negocio genera ganancias o pérdidas.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/2721/2721267.png">
 <p>
-3. Utiliza una calculadora para verificar operaciones antes de cobrar o entregar vuelto.
+<b>3. Utiliza una calculadora.</b><br>
+Verifica siempre las operaciones antes de cobrar o entregar vuelto.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048941.png">
 <p>
-4. Organiza tus productos por categorías para encontrar rápidamente precios y cantidades.
+<b>4. Organiza tus productos.</b><br>
+Clasifica los productos para encontrar precios y cantidades más rápidamente.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
 <p>
-5. Guarda comprobantes y registros importantes para futuras revisiones.
+<b>5. Guarda comprobantes.</b><br>
+Conserva boletas, facturas y documentos importantes para futuras consultas.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png">
 <p>
-6. Realiza balances diarios para conocer cuánto ganaste y cuánto invertiste.
+<b>6. Realiza balances diarios.</b><br>
+Revisa cuánto ganaste, cuánto invertiste y cuánto dinero queda disponible.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929564.png">
 <p>
-7. Revisa dos veces los cálculos cuando trabajes con cantidades grandes.
+<b>7. Revisa tus cálculos.</b><br>
+Verifica dos veces las operaciones cuando trabajes con cantidades grandes.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
 <p>
-8. Mantén un control de las deudas y pagos pendientes.
+<b>8. Controla las deudas.</b><br>
+Lleva un registro de pagos pendientes para evitar confusiones.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
 <p>
-9. Utiliza herramientas digitales para ahorrar tiempo y reducir errores.
+<b>9. Aprovecha herramientas digitales.</b><br>
+Las aplicaciones y calculadoras ayudan a reducir errores y ahorrar tiempo.
 </p>
-
+</div><div class="tarjetaConsejo">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
 <p>
-10. Comparte estos hábitos con tu familia y compañeros para mejorar la administración económica.
+<b>10. Comparte buenas prácticas.</b><br>
+Enseña estos hábitos a tu familia y compañeros para mejorar la administración económica.
 </p>
-
-<p>
+</div><br><p>
 La buena organización financiera permite tomar mejores decisiones, evitar pérdidas y brindar una mejor atención a los clientes.
-</p>
-
-</div>
-
-<br>
-
-<button class="btn" onclick="mostrar('nosotros')">
-Volver
+</p><br><button
+class="btn"
+onclick="mostrar('nosotros')">
+⬅ Volver
 </button>
 
-<button class="btn" onclick="mostrar('calculadora')">
-Calculadora
+<button
+class="btn"
+onclick="mostrar('calculadora')">
+🧮 Calculadora
 </button>
 
-<button class="btn" onclick="mostrar('asistente')">
-Asistente de Voz
+<button
+class="btn"
+onclick="mostrar('asistente')">
+🎤 Asistente de Voz
 </button>
 
-</div>
-
-  </section><!-- CALCULADORA -->
-
-<section id="calculadora" class="seccion">
-
-<div class="contenedor">
-
-<h1>Calculadora OSAC</h1>
-
-<p>
-Realiza operaciones básicas de suma, resta, multiplicación y división.
-</p>
-
-<br>
-
-<input
+</div></section><!-- CALCULADORA --><section id="calculadora" class="seccion"><div class="contenedor"><h1>Calculadora OSAC</h1><p>
+Realiza operaciones básicas, porcentajes y cálculos rápidos para tus ventas.
+</p><br><input
 type="text"
 id="pantalla"
-readonly
-style="
-width:100%;
-max-width:400px;
-padding:20px;
-font-size:30px;
-text-align:right;
-border-radius:15px;
-border:2px solid #0d6efd;
-margin-bottom:15px;
-">
+readonly>
 
 <div
 style="
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:10px;
-max-width:400px;
+max-width:450px;
 margin:auto;
-">
-
-<button class="btn" onclick="agregar('7')">7</button>
+"><button class="btn" onclick="agregar('7')">7</button>
 <button class="btn" onclick="agregar('8')">8</button>
 <button class="btn" onclick="agregar('9')">9</button>
 <button class="btn" onclick="agregar('/')">÷</button>
@@ -322,129 +370,159 @@ margin:auto;
 
 <button class="btn" onclick="agregar('0')">0</button>
 <button class="btn" onclick="agregar('.')">.</button>
-<button class="btn" onclick="calcular()">=</button>
+<button class="btn" onclick="agregar('%')">%</button>
 <button class="btn" onclick="agregar('+')">+</button>
 
-</div>
+<button class="btn" onclick="agregar('(')">(</button>
+<button class="btn" onclick="agregar(')')">)</button>
+<button class="btn" onclick="limpiar()">C</button>
+<button class="btn" onclick="calcular()">=</button>
 
-<br>
-
-<button class="btn" onclick="limpiar()">
-Limpiar
+</div><br><h2>Ejemplos rápidos</h2><p>
+10% de 500 = escriba 500*10%
+</p><p>
+100 + 50 = escriba 100+50
+</p><p>
+500 - 120 = escriba 500-120
+</p><br><button
+class="btn"
+onclick="limpiar()">
+🗑 Limpiar
 </button>
 
 <br><br>
 
-<button class="btn" onclick="mostrar('consejos')">
-Volver
+<button
+class="btn"
+onclick="mostrar('consejos')">
+⬅ Volver
 </button>
 
-<button class="btn" onclick="mostrar('gracias')">
-Finalizar
+<button
+class="btn"
+onclick="mostrar('gracias')">
+Finalizar ➜
 </button>
 
-</div>
-
-</section>
-
-<!-- ASISTENTE -->
-
-<section id="asistente" class="seccion">
-
-<div class="contenedor">
-
-<h1>Asistente de Voz OSAC</h1>
-
-<p>
-Presiona el botón y habla.
-</p>
-
-<p>
-Puedes decir:
-"Hola"
-o
-"5 más 5"
-</p>
-
-<br>
-
-<button class="btn" onclick="escuchar()">
+</div></section><!-- ASISTENTE --><section id="asistente" class="seccion"><div class="contenedor"><h1>Asistente Inteligente OSAC</h1><p>
+Tu asistente puede ayudarte con preguntas relacionadas con cuentas, ventas, ganancias, comprobantes de pago y organización financiera.
+</p><br><h2>🎤 Consulta por voz</h2><p>
+Presiona el botón y habla claramente.
+</p><button
+class="btn"
+onclick="escuchar()">
 🎤 Hablar
 </button>
 
 <br><br>
 
-<h2 id="respuesta">
-Esperando instrucciones...
-</h2>
+<h2>⌨ Consulta escrita</h2><p>
+También puedes escribir tus preguntas.
+</p><input
+type="text"
+id="pregunta"
+placeholder="Ejemplo: ¿Cómo calculo mi saldo?">
 
-<br>
-
-<button class="btn" onclick="mostrar('consejos')">
-Volver
-</button>
-
-<button class="btn" onclick="mostrar('gracias')">
-Finalizar
-</button>
-
-</div>
-
-</section>
-
-<!-- AGRADECIMIENTO -->
-
-<section id="gracias" class="seccion">
-
-<div class="contenedor">
-
-<h1>Gracias por utilizar OSAC</h1>
-
-<p>
-Esperamos haber ayudado a facilitar tus cuentas.
-</p>
-
-<br>
-
-<h2>
-¿Qué te pareció nuestro servicio?
-</h2>
-
-<br>
-
-<button class="btn" onclick="opinion()">
-Mucho
-</button>
-
-<button class="btn" onclick="opinion()">
-Poco
-</button>
-
-<button class="btn" onclick="opinion()">
-Nada
+<button
+class="btn"
+onclick="preguntar()">
+Preguntar
 </button>
 
 <br><br>
 
-<p id="mensajeFinal"></p>
+<h2 id="respuesta">Esperando instrucciones...
 
-<br>
-
-<button class="btn" onclick="mostrar('inicio')">
-Volver al Inicio
+</h2><br><h2>Preguntas que puedes realizar</h2><div class="tarjetaConsejo"><p>
+💰 ¿Cómo saco mi saldo?
+</p></div><div class="tarjetaConsejo"><p>
+📄 ¿Qué es un comprobante de pago?
+</p></div><div class="tarjetaConsejo"><p>
+📊 ¿Cómo calcular ganancias?
+</p></div><div class="tarjetaConsejo"><p>
+🧾 ¿Qué es una boleta?
+</p></div><div class="tarjetaConsejo"><p>
+🏢 ¿Qué es una factura?
+</p></div><div class="tarjetaConsejo"><p>
+📉 ¿Cómo controlar mis deudas?
+</p></div><div class="tarjetaConsejo"><p>
+📋 ¿Cómo organizar mejor mis cuentas?
+</p></div><br><button
+class="btn"
+onclick="mostrar('consejos')">
+⬅ Volver
 </button>
 
-</div>
+<button
+class="btn"
+onclick="mostrar('gracias')">
+Finalizar ➜
+</button>
 
-</section>
+</div></section><!-- AGRADECIMIENTO Y CALIFICACIÓN --><section id="gracias" class="seccion"><div class="contenedor"><h1>Gracias por utilizar OSAC</h1><p>
+Esperamos haber contribuido a facilitar tus cuentas y mejorar la organización de tus ventas.
+</p><br><h2>¿Qué te pareció nuestro servicio?</h2><p>
+Selecciona una opción y, si deseas, deja una reseña sobre tu experiencia.
+</p><br><button
+class="btn"
+onclick="opinion('mucho')">
+😍 Mucho
+</button>
 
+<button
+class="btn"
+onclick="opinion('poco')">
+🙂 Poco
+</button>
+
+<button
+class="btn"
+onclick="opinion('nada')">
+😕 Nada
+</button>
+
+<br><br>
+
+<h2>📝 Escribe tu reseña</h2><textarea
+id="reseña"
+placeholder="Cuéntanos cómo fue tu experiencia utilizando OSAC...">
+</textarea><br><button
+class="btn"
+onclick="enviarReseña()">
+Enviar reseña
+</button>
+
+<br><br>
+
+<p id="mensajeFinal"></p><br><div class="contacto"><h2>⭐ Gracias por visitar OSAC</h2><p>
+Tu opinión es importante para nosotros. Cada comentario nos ayuda a mejorar nuestras herramientas y brindar un mejor servicio a los usuarios.
+</p></div><br><button
+class="btn"
+onclick="mostrar('calculadora')">
+⬅ Volver
+</button>
+
+<button
+class="btn"
+onclick="mostrar('inicio')">
+🏠 Volver al Inicio
+</button>
+
+</div></section>
 <script>
+
+/* ===========================
+   CAMBIO DE SECCIONES
+=========================== */
 
 function mostrar(id){
 
-document.querySelectorAll('.seccion')
+document
+.querySelectorAll('.seccion')
 .forEach(sec=>{
+
 sec.classList.remove('activa');
+
 });
 
 document
@@ -453,15 +531,63 @@ document
 
 }
 
+/* ===========================
+   REGISTRO DE USUARIO
+=========================== */
+
+function registrar(){
+
+let usuario =
+document.getElementById(
+'usuario'
+).value;
+
+let clave =
+document.getElementById(
+'clave'
+).value;
+
+if(
+usuario==='' ||
+clave===''
+){
+
+alert(
+'Complete todos los campos.'
+);
+
+return;
+
+}
+
+localStorage.setItem(
+'usuarioOSAC',
+usuario
+);
+
+alert(
+'Registro realizado correctamente.'
+);
+
+}
+
+/* ===========================
+   CALCULADORA
+=========================== */
+
 function agregar(valor){
 
-document.getElementById('pantalla').value+=valor;
+document.getElementById(
+'pantalla'
+).value += valor;
 
 }
 
 function limpiar(){
 
-document.getElementById('pantalla').value='';
+document.getElementById(
+'pantalla'
+).value = '';
 
 }
 
@@ -469,25 +595,192 @@ function calcular(){
 
 try{
 
-document.getElementById('pantalla').value=
-eval(document.getElementById('pantalla').value);
+let expresion =
+document.getElementById(
+'pantalla'
+).value;
+
+/* porcentaje */
+
+expresion =
+expresion.replace(
+/(\d+)%/g,
+'($1/100)'
+);
+
+let resultado =
+eval(expresion);
+
+document.getElementById(
+'pantalla'
+).value =
+resultado;
 
 }
 
 catch{
 
-alert('Operación incorrecta');
+alert(
+'Operación incorrecta'
+);
 
 }
 
 }
 
-function opinion(){
+/* ===========================
+   CALIFICACIÓN
+=========================== */
 
-document.getElementById('mensajeFinal').innerHTML=
-'Gracias por su opinión. Continuaremos mejorando nuestro módulo para brindar un mejor servicio.';
+function opinion(tipo){
+
+let mensaje='';
+
+if(tipo==='mucho'){
+
+mensaje=
+'😍 Gracias. Nos alegra saber que nuestro servicio te ayudó mucho.';
 
 }
+
+else if(tipo==='poco'){
+
+mensaje=
+'🙂 Gracias por tu opinión. Seguiremos mejorando nuestro proyecto.';
+
+}
+
+else{
+
+mensaje=
+'😕 Gracias por tu sinceridad. Trabajaremos para mejorar la experiencia.';
+
+}
+
+document.getElementById(
+'mensajeFinal'
+).innerHTML =
+mensaje;
+
+}
+
+function enviarReseña(){
+
+let texto =
+document.getElementById(
+'reseña'
+).value;
+
+if(texto===''){
+
+alert(
+'Escriba una reseña.'
+);
+
+return;
+
+}
+
+document.getElementById(
+'mensajeFinal'
+).innerHTML =
+'⭐ Gracias por compartir tu opinión:<br><br>' +
+texto;
+
+}/* ===========================
+PREGUNTAS ESCRITAS
+=========================== */
+
+function preguntar(){
+
+let texto =
+document.getElementById(
+'pregunta'
+).value.toLowerCase();
+
+let respuesta =
+obtenerRespuesta(texto);
+
+document.getElementById(
+'respuesta'
+).innerHTML =
+respuesta;
+
+speechSynthesis.speak(
+new SpeechSynthesisUtterance(
+respuesta
+)
+);
+
+}
+
+/* ===========================
+RESPUESTAS DEL ASISTENTE
+=========================== */
+
+function obtenerRespuesta(texto){
+
+if(texto.includes('hola')){
+
+return 'Hola. Bienvenido a OSAC. ¿En qué puedo ayudarte?';
+
+}
+
+if(texto.includes('saldo')){
+
+return 'El saldo se obtiene restando los gastos a los ingresos. Fórmula: Saldo = Ingresos - Gastos.';
+
+}
+
+if(texto.includes('ganancia')){
+
+return 'La ganancia se calcula restando los costos a los ingresos obtenidos por las ventas.';
+
+}
+
+if(texto.includes('comprobante')){
+
+return 'Un comprobante de pago es un documento que acredita una compra o una venta realizada.';
+
+}
+
+if(texto.includes('boleta')){
+
+return 'La boleta de venta es un comprobante utilizado para registrar operaciones comerciales con consumidores finales.';
+
+}
+
+if(texto.includes('factura')){
+
+return 'La factura es un comprobante que permite sustentar operaciones comerciales y tributarias.';
+
+}
+
+if(texto.includes('deuda')){
+
+return 'Lleve un registro de todas las deudas pendientes para controlar fechas y montos de pago.';
+
+}
+
+if(texto.includes('cuentas')){
+
+return 'Para organizar sus cuentas registre ingresos, gastos, deudas y ganancias diariamente.';
+
+}
+
+if(texto.includes('ventas')){
+
+return 'Registrar cada venta ayuda a conocer las ganancias reales del negocio.';
+
+}
+
+return 'Puedo ayudarte con temas relacionados con saldo, ganancias, comprobantes, boletas, facturas, deudas y organización de cuentas.';
+
+}
+
+/* ===========================
+ASISTENTE DE VOZ
+=========================== */
 
 function escuchar(){
 
@@ -508,55 +801,26 @@ return;
 const reconocimiento =
 new SpeechRecognition();
 
-reconocimiento.lang='es-ES';
+reconocimiento.lang =
+'es-ES';
 
 reconocimiento.start();
 
-reconocimiento.onresult=function(event){
+reconocimiento.onresult =
+function(event){
 
-let texto=
-event.results[0][0].transcript.toLowerCase();
+let texto =
+event.results[0][0]
+.transcript
+.toLowerCase();
 
-let respuesta=
-'No entendí la instrucción.';
-
-if(texto.includes('hola')){
-
-respuesta='Hola, bienvenido a OSAC.';
-
-}
-
-try{
-
-let expresion=
-texto
-.replace(/más/g,'+')
-.replace(/menos/g,'-');
-
-if(/[0-9]/.test(expresion)){
-
-let resultado=
-eval(
-expresion.replace(
-/[^0-9+\-*/().]/g,
-''
-)
-);
-
-if(!isNaN(resultado)){
-
-respuesta=
-'El resultado es ' + resultado;
-
-}
-
-}
-
-}catch(error){}
+let respuesta =
+obtenerRespuesta(texto);
 
 document.getElementById(
 'respuesta'
-).innerHTML=respuesta;
+).innerHTML =
+respuesta;
 
 speechSynthesis.speak(
 new SpeechSynthesisUtterance(
@@ -564,11 +828,30 @@ respuesta
 )
 );
 
-}
+};
 
 }
 
-</script>
+/* ===========================
+MENSAJE DE BIENVENIDA
+=========================== */
 
-</body>
-  </html>
+window.onload=function(){
+
+let usuario=
+localStorage.getItem(
+'usuarioOSAC'
+);
+
+if(usuario){
+
+console.log(
+'Usuario registrado: '+
+usuario
+);
+
+}
+
+};
+
+</script></body></html>
